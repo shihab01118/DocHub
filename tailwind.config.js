@@ -21,7 +21,8 @@ export default {
       backgroundImage: {
         login:
           "url('https://images.unsplash.com/photo-1533283986565-dcb510874ba8')",
-        signup: "url('/src/assets/backgrounds/bg-3.jpg')",
+        signup:
+          "url('https://img.freepik.com/free-photo/beautiful-view-lake-surrounded-by-mountains-with-glowing-sun-background_181624-24090.jpg')",
       },
     },
   },

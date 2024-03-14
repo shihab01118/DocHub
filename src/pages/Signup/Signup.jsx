@@ -1,26 +1,27 @@
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import GoogleButton from "../../components/Shared/Button/GoogleButton";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import GoogleButton from "../../components/Shared/Button/GoogleButton";
 
-const Login = () => {
+const Signup = () => {
   const [visible, setVisible] = useState(false);
+
   const [checked, setChecked] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
   };
 
   return (
     <>
       <Helmet>
-        <title>DocHub - Login</title>
+        <title>DocHub - Signup</title>
       </Helmet>
-      <section className="bg-login min-h-screen bg-cover bg-no-repeat bg-center relative">
+      <section className="bg-signup min-h-screen bg-cover bg-no-repeat bg-center relative">
         {/* Overlay covering the entire section */}
-        <div className="bg-primary absolute inset-0 opacity-30 z-0"></div>
+        <div className="bg-primary absolute inset-0 opacity-40 z-0"></div>
 
         {/* Header */}
         <div className="max-w-7xl mx-auto py-3 px-2 md:flex justify-between items-center z-20 relative hidden">
@@ -36,9 +37,9 @@ const Login = () => {
               </h2>
             </div>
           </Link>
-          <Link to="/signup">
-            <span className="text-xl font-light italic text-primary">
-              Don{"'"}t have an account? Create one
+          <Link to="/login">
+            <span className="text-xl font-light italic text-white/90">
+              Already have an account? Sign in
             </span>
           </Link>
         </div>
@@ -59,23 +60,33 @@ const Login = () => {
           </Link>
         </div>
 
-        {/* Login form */}
+        {/* Signup form */}
         <div className="flex items-center justify-center min-h-screen md:min-h-[calc(100vh-72px)] relative z-20">
           <div className="md:max-w-md w-full xs:flex xs:items-center xs:h-screen md:h-fit bg-white/30 backdrop-blur-md md:rounded-lg xs:p-4 sm:p-8">
             <div className="w-full max-w-md mx-auto">
               <h2 className="text-center text-3xl text-primary font-bold">
-                Login
+                Create Account
               </h2>
 
               {/* form */}
-              <form onSubmit={handleLogin} className="mt-6">
-                {/* Email field */}
+              <form onSubmit={handleSignup} className="mt-6">
+                {/* Name field */}
                 <div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    className="w-full h-11 px-6 rounded-full bg-white/30 focus:outline-none text-[#555] placeholder-[#777]"
+                  />
+                </div>
+
+                {/* Email field */}
+                <div className="mt-4">
                   <input
                     type="email"
                     name="email"
                     placeholder="Email"
-                    className="w-full h-11 px-6 rounded-full bg-white/30 focus:outline-none text-[#555]"
+                    className="w-full h-11 px-6 rounded-full bg-white/30 focus:outline-none text-[#555] placeholder-[#777]"
                   />
                 </div>
 
@@ -85,7 +96,7 @@ const Login = () => {
                     type={visible ? "text" : "password"}
                     name="password"
                     placeholder="Password"
-                    className="w-full h-11 px-6 rounded-full bg-white/30 focus:outline-none text-[#555]"
+                    className="w-full h-11 px-6 rounded-full bg-white/30 focus:outline-none text-[#555] placeholder-[#777]"
                   />
 
                   {/* eye button */}
@@ -97,43 +108,42 @@ const Login = () => {
                   </span>
                 </div>
 
-                {/* Remember & forget */}
-                <div className="flex justify-between items-center mt-4 text-[#333]">
-                  <div className="flex items-center">
-                    <input
-                      type="checkbox"
-                      id="myCheckbox"
-                      checked={checked}
-                      onChange={() => {
-                        setChecked(!checked);
-                      }}
-                      className="hidden"
-                    />
-                    <label
-                      htmlFor="myCheckbox"
-                      className={`cursor-pointer border border-primary rounded w-4 h-4 flex items-center justify-center ${
-                        checked ? "bg-sky text-white" : "bg-white"
-                      }`}
+                {/* Terms and condition checkbox label */}
+                <div className="flex items-center mt-4">
+                  <input
+                    type="checkbox"
+                    id="myCheckbox"
+                    checked={checked}
+                    onChange={() => {
+                      setChecked(!checked);
+                    }}
+                    className="hidden"
+                  />
+                  <label
+                    htmlFor="myCheckbox"
+                    className={`cursor-pointer border border-primary rounded w-4 h-4 flex items-center justify-center ${
+                      checked ? "bg-sky text-white" : "bg-white"
+                    }`}
+                  >
+                    <svg
+                      className={`fill-current ${
+                        checked ? "" : "hidden"
+                      } w-4 h-4 pointer-events-none`}
+                      viewBox="0 0 20 20"
                     >
-                      <svg
-                        className={`fill-current ${
-                          checked ? "text-white" : "hidden"
-                        } w-4 h-4 pointer-events-none`}
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                      </svg>
-                    </label>
-                    <span className="ml-2 text-primary">Remember me</span>
-                  </div>
-                  <p>Forgot password?</p>
+                      <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                    </svg>
+                  </label>
+                  <span className="ml-2 text-primary">
+                    I accept all the terms and conditions.
+                  </span>
                 </div>
 
-                {/* Login button */}
+                {/* Signup button */}
                 <div className="flex justify-center mt-4">
                   <input
                     type="submit"
-                    value="Login"
+                    value="Sign Up"
                     className="w-full rounded-full bg-secondary text-white h-11 font-medium cursor-pointer active:scale-95 transition-all hover:bg-sky"
                   />
                 </div>
@@ -149,9 +159,9 @@ const Login = () => {
 
               {/* signup link for small device */}
               <div className="w-fit mx-auto mt-4 md:hidden text-primary">
-                <Link to="/signup">
-                  Don{"'"}t have an account?{" "}
-                  <span className="text-sky">Create one</span>
+                <Link to="/login">
+                  Already have an account?{" "}
+                  <span className="text-sky">Sign In</span>
                 </Link>
               </div>
             </div>
@@ -162,4 +172,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
