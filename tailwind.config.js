@@ -8,15 +8,22 @@ export default {
       white: "#FFFFFF",
       "gray-light": "#f3f4f6",
       error: "#E91E63",
+      sky: "#03B8D7",
     },
     screens: {
       xs: "320px",
-      sm: "480px",
+      sm: "445px",
       md: "768px",
       lg: "976px",
       xl: "1440px",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        login:
+          "url('https://images.unsplash.com/photo-1533283986565-dcb510874ba8')",
+        signup: "url('/src/assets/backgrounds/bg-3.jpg')",
+      },
+    },
   },
   plugins: [],
 };
