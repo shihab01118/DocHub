@@ -21,9 +21,9 @@ const Signup = () => {
       </Helmet>
       <section className="bg-signup min-h-screen bg-cover bg-no-repeat bg-center relative">
         {/* Overlay covering the entire section */}
-        <div className="bg-primary absolute inset-0 opacity-40 z-0"></div>
+        <div className="bg-title absolute inset-0 opacity-40 z-0"></div>
 
-        {/* Header */}
+        {/* title */}
         <div className="max-w-7xl mx-auto py-3 px-2 md:flex justify-between items-center z-20 relative hidden">
           <Link to="/">
             <div className="flex items-center gap-2 lg:gap-3 ">
@@ -32,7 +32,7 @@ const Signup = () => {
                 alt="logo-img"
                 className="xs:w-8 sm:w-10 lg:w-12"
               />
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-primary">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-title">
                 DocHub
               </h2>
             </div>
@@ -53,7 +53,7 @@ const Signup = () => {
                 alt="logo-img"
                 className="xs:w-8 sm:w-10 lg:w-12"
               />
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-primary">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-title">
                 DocHub
               </h2>
             </div>
@@ -64,7 +64,7 @@ const Signup = () => {
         <div className="flex items-center justify-center min-h-screen md:min-h-[calc(100vh-72px)] relative z-20">
           <div className="md:max-w-md w-full xs:flex xs:items-center xs:h-screen md:h-fit bg-white/30 backdrop-blur-md md:rounded-lg xs:p-4 sm:p-8">
             <div className="w-full max-w-md mx-auto">
-              <h2 className="text-center text-3xl text-primary font-bold">
+              <h2 className="text-center text-3xl text-title font-bold">
                 Create Account
               </h2>
 
@@ -121,7 +121,7 @@ const Signup = () => {
                   />
                   <label
                     htmlFor="myCheckbox"
-                    className={`cursor-pointer border border-primary rounded w-4 h-4 flex items-center justify-center ${
+                    className={`cursor-pointer border border-title rounded w-4 h-4 flex items-center justify-center ${
                       checked ? "bg-sky text-white" : "bg-white"
                     }`}
                   >
@@ -134,7 +134,7 @@ const Signup = () => {
                       <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
                     </svg>
                   </label>
-                  <span className="ml-2 text-primary">
+                  <span className="ml-2 text-title">
                     I accept all the terms and conditions.
                   </span>
                 </div>
@@ -144,13 +144,13 @@ const Signup = () => {
                   <input
                     type="submit"
                     value="Sign Up"
-                    className="w-full rounded-full bg-secondary text-white h-11 font-medium cursor-pointer active:scale-95 transition-all hover:bg-sky"
+                    className="w-full rounded-full bg-primary text-white h-11 font-medium cursor-pointer active:scale-95 transition-all hover:bg-sky"
                   />
                 </div>
               </form>
 
               {/* Divider */}
-              <div className="py-3 flex items-center text-primary text-sm before:flex-[1_1_0%] before:border-t before:border-primary before:me-6 after:flex-[1_1_0%] after:border-t after:border-primary after:ms-6">
+              <div className="py-3 flex items-center text-title text-sm before:flex-[1_1_0%] before:border-t before:border-title before:me-6 after:flex-[1_1_0%] after:border-t after:border-title after:ms-6">
                 or
               </div>
 
@@ -158,7 +158,7 @@ const Signup = () => {
               <GoogleButton />
 
               {/* signup link for small device */}
-              <div className="w-fit mx-auto mt-4 md:hidden text-primary">
+              <div className="w-fit mx-auto mt-4 md:hidden text-title">
                 <Link to="/login">
                   Already have an account?{" "}
                   <span className="text-sky">Sign In</span>

@@ -3,8 +3,8 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
-      primary: "#3A4256",
-      secondary: "#0FCFEC",
+      primary: "#01B2B7",
+      title: "#2C2D3F",
       white: "#FFFFFF",
       "gray-light": "#f3f4f6",
       error: "#E91E63",
@@ -16,6 +16,9 @@ export default {
       md: "768px",
       lg: "976px",
       xl: "1440px",
+    },
+    fontFamily: {
+      poppins: "'Poppins', sans-serif",
     },
     extend: {
       backgroundImage: {

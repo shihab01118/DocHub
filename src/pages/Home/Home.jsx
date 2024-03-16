@@ -6,7 +6,7 @@ const Home = () => {
       <Helmet>
         <title>DocHub - Home</title>
       </Helmet>
-      <section>
+      <section className="min-h-[2000px] bg-gray-light">
         <h3> Hello, I am Home.</h3>
       </section>
     </>
