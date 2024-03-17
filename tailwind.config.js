@@ -4,7 +4,7 @@ export default {
   theme: {
     colors: {
       primary: "#01B2B7",
-      title: "#2C2D3F",
+      dark: "#2C2D3F",
       white: "#FFFFFF",
       "gray-light": "#f3f4f6",
       error: "#E91E63",
@@ -26,6 +26,12 @@ export default {
           "url('https://images.unsplash.com/photo-1533283986565-dcb510874ba8')",
         signup:
           "url('https://img.freepik.com/free-photo/beautiful-view-lake-surrounded-by-mountains-with-glowing-sun-background_181624-24090.jpg')",
+        carousel1:
+          "url('https://mediplus-nextjs.vercel.app/_next/static/media/slider2.25fad811.jpg')",
+        carousel2:
+          "url('https://mediplus-nextjs.vercel.app/_next/static/media/slider.f76040ee.jpg')",
+        carousel3:
+          "url('https://mediplus-nextjs.vercel.app/_next/static/media/slider3.5dc7b668.jpg')",
       },
     },
   },

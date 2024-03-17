@@ -63,12 +63,12 @@ const Avatar = () => {
       {isDropdownOpen && (
         <div
           onClick={(e) => e.stopPropagation()}
-          className="absolute right-0 mt-2 w-48 border-2 border-primary bg-white rounded-md shadow-lg animate-dropdown"
+          className="absolute right-0 mt-2 w-48 border-2 border-primary bg-white rounded-md shadow-lg animate-dropdown z-40"
         >
           <ul className="w-full p-4">
             <li>
               <Link to="/profile">
-                <div className="flex items-center px-3 py-2 w-full rounded-md text-title hover:text-[#666] transition duration-300 hover:bg-primary hover:bg-opacity-30">
+                <div className="flex items-center px-3 py-2 w-full rounded-md text-dark hover:text-[#666] transition duration-300 hover:bg-primary hover:bg-opacity-30">
                   <FiUser className="text-2xl mr-3" />
                   <span className="font-medium">Profile</span>
                 </div>
@@ -77,7 +77,7 @@ const Avatar = () => {
 
             <li>
               <Link to="/dashboard">
-                <div className="flex items-center px-3 py-2 w-full rounded-md text-title hover:text-[#666] transition duration-300 hover:bg-primary hover:bg-opacity-30">
+                <div className="flex items-center px-3 py-2 w-full rounded-md text-dark hover:text-[#666] transition duration-300 hover:bg-primary hover:bg-opacity-30">
                   <FiBarChart className="text-2xl mr-3" />
                   <span className="font-medium">Dashboard</span>
                 </div>
@@ -85,7 +85,7 @@ const Avatar = () => {
             </li>
 
             {/* todo: logout function will come from auth context */}
-            <li className="flex items-center px-3 py-2 w-full rounded-md text-title hover:text-[#666] transition duration-300 hover:bg-primary hover:bg-opacity-30 cursor-pointer">
+            <li className="flex items-center px-3 py-2 w-full rounded-md text-dark hover:text-[#666] transition duration-300 hover:bg-primary hover:bg-opacity-30 cursor-pointer">
               <FiLogOut className="text-2xl mr-3" />
               <span className="font-medium">Logout</span>
             </li>
