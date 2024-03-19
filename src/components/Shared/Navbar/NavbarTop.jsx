@@ -21,9 +21,7 @@ const NavbarTop = () => {
   );
 
   return (
-    <div
-      className="flex flex-col justify-center gap-3 md:flex-row md:justify-between items-center py-3 max-w-6xl mx-auto px-2 lg:px-0"
-    >
+    <div className="flex flex-col justify-center gap-3 md:flex-row md:justify-between items-center py-3 max-w-6xl mx-auto px-4 lg:px-12 xl:px-0">
       <div className="font-poppins text-dark  text-sm sm:text-base">
         <ul className="flex gap-5">{navLinksTop}</ul>
       </div>

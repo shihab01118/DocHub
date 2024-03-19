@@ -11,11 +11,12 @@ export default {
       sky: "#03B8D7",
     },
     screens: {
-      xs: "320px",
-      sm: "445px",
+      xs: "0px",
+      sm: "576px",
       md: "768px",
-      lg: "976px",
-      xl: "1440px",
+      lg: "992px",
+      xl: "1200px",
+      xxl: "1400px"
     },
     fontFamily: {
       poppins: "'Poppins', sans-serif",

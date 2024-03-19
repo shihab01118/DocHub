@@ -6,12 +6,9 @@ const Banner = () => {
 
   // slides
   const slide1 = (
-    <div
-      key={1}
-      className="min-w-full h-80 sm:h-96 md:h-[540px] bg-carousel1 bg-center bg-cover bg-no-repeat"
-    >
+    <div className="min-w-full h-80 sm:h-96 md:h-[600px] bg-carousel1 bg-center bg-cover bg-no-repeat px-4 lg:px-12 xl:px-0">
       <div className="max-w-6xl mx-auto h-full flex items-center">
-        <div className="max-w-xl md:max-w-2xl px-2 lg:px-0">
+        <div className="max-w-[448px] md:max-w-[648px] lg:max-w-2xl w-full lg:-mt-40">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,7 +25,7 @@ const Banner = () => {
             className="font-poppins my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
           >
             Experience Trusted Excellence in Medical Care: Comprehensive
-            Services Delivered <br className="hidden md:block" /> with
+            Services Delivered <br className="hidden xl:block" /> with
             Compassion and Expertise.
           </motion.p>
           <motion.div
@@ -51,12 +48,9 @@ const Banner = () => {
   );
 
   const slide2 = (
-    <div
-      key={2}
-      className="min-w-full h-80 sm:h-96 md:h-[540px] bg-carousel2 bg-center bg-cover bg-no-repeat"
-    >
+    <div className="min-w-full h-80 sm:h-96 md:h-[600px] bg-carousel2 bg-center bg-cover bg-no-repeat  px-4 lg:px-12 xl:px-0">
       <div className="max-w-6xl mx-auto h-full flex items-center">
-        <div className="max-w-xl md:max-w-2xl px-2 lg:px-0">
+        <div className="max-w-xl md:max-w-2xl lg:-mt-40">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -73,7 +67,7 @@ const Banner = () => {
             className="font-poppins my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
           >
             Experience Trusted Excellence in Medical Care: Comprehensive
-            Services Delivered <br className="hidden md:block" /> with
+            Services Delivered <br className="hidden xl:block" /> with
             Compassion and Expertise.
           </motion.p>
           <motion.div
@@ -96,12 +90,9 @@ const Banner = () => {
   );
 
   const slide3 = (
-    <div
-      key={3}
-      className="min-w-full h-80 sm:h-96 md:h-[540px] bg-carousel3 bg-center bg-cover bg-no-repeat"
-    >
+    <div className="min-w-full h-80 sm:h-96 md:h-[600px] bg-carousel3 bg-center bg-cover bg-no-repeat  px-4 lg:px-12 xl:px-0">
       <div className="max-w-6xl mx-auto h-full flex items-center">
-        <div className="max-w-xl md:max-w-2xl px-2 lg:px-0">
+        <div className="max-w-xl md:max-w-2xl lg:-mt-40">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,7 +109,7 @@ const Banner = () => {
             className="font-poppins my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
           >
             Experience Trusted Excellence in Medical Care: Comprehensive
-            Services Delivered <br className="hidden md:block" /> with
+            Services Delivered <br className="hidden xl:block" /> with
             Compassion and Expertise.
           </motion.p>
           <motion.div
@@ -157,10 +148,10 @@ const Banner = () => {
 
   // slide autoplay handler
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      nextSlider();
-    }, 3000);
-    return () => clearInterval(intervalId);
+    // const intervalId = setInterval(() => {
+    //   nextSlider();
+    // }, 4500);
+    // return () => clearInterval(intervalId);
   }, [nextSlider]);
 
   return (
@@ -168,7 +159,7 @@ const Banner = () => {
       {/* arrow left */}
       <button
         onClick={prevSlider}
-        className="absolute top-1/2 left-3 z-20 flex justify-center items-center bg-primary rounded-full w-6 h-6 md:w-8 md:h-8"
+        className="absolute top-1/2 left-3 z-20 lg:flex justify-center items-center bg-primary rounded-full w-6 h-6 md:w-8 md:h-8 hidden"
       >
         <svg
           className="w-4 h-4 md:w-6 md:h-6 icon"
@@ -193,7 +184,7 @@ const Banner = () => {
       {/* arrow right */}
       <button
         onClick={nextSlider}
-        className="absolute top-1/2 z-20 right-3  flex justify-center items-center bg-primary rounded-full w-6 h-6 md:w-8 md:h-8"
+        className="absolute top-1/2 z-20 right-3 hidden lg:flex justify-center items-center bg-primary rounded-full w-6 h-6 md:w-8 md:h-8"
       >
         <svg
           className="w-4 h-4 md:w-6 md:h-6 icon"

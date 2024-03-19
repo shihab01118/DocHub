@@ -35,7 +35,7 @@ const NavbarBottom = () => {
     </>
   );
   return (
-    <div  className="py-3 bg-white px-2 lg:px-0 z-50">
+    <div className="py-3 bg-white px-4 lg:px-12 xl:px-0 z-50">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* logo */}
         <Logo />
