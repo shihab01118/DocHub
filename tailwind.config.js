@@ -9,6 +9,7 @@ export default {
       "gray-light": "#f3f4f6",
       error: "#E91E63",
       sky: "#03B8D7",
+      ash: "#888888",
     },
     screens: {
       xs: "0px",
@@ -16,7 +17,7 @@ export default {
       md: "768px",
       lg: "992px",
       xl: "1200px",
-      xxl: "1400px"
+      xxl: "1400px",
     },
     fontFamily: {
       poppins: "'Poppins', sans-serif",

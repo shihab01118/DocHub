@@ -12,7 +12,7 @@ const NavbarBottom = () => {
   };
 
   // todo: User will be confirmed from db
-  const user = true;
+  const user = false;
 
   // navlinks
   const navLinksBottom = (
