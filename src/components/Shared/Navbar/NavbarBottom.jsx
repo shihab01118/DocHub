@@ -63,13 +63,11 @@ const NavbarBottom = () => {
             <Avatar />
           ) : (
             <Link to="/login">
-              <button className="rounded-lg border-2 border-primary px-4 py-1 text-xl text-primary transition duration-500 hover:bg-primary hover:text-white">
-                Login
-              </button>
+              <Button value="login" />
             </Link>
           )}
           <button onClick={toggleDrawer} className="ml-3">
-            <FiMenu className="text-3xl sm:text-4xl" />
+            <FiMenu className="text-3xl sm:text-4xl text-primary" />
           </button>
           <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
             <div className="bg-white h-full">

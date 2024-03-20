@@ -7,14 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-AOS.init({
-  // Global AOS configuration options
-  // For example:
-  // offset: 100,
-  // duration: 500,
-  // easing: 'ease-in-out',
-  // delay: 100,
-});
+AOS.init();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

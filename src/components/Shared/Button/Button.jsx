@@ -14,7 +14,7 @@ const Button = ({ value, submit, fullWidth, rounded, dark, Icon }) => {
   return (
     <button
       type={submit ? "submit" : "button"}
-      className={`md:text-xl px-5 py-[10px] text-white relative overflow-hidden group z-10 hover:text-white duration-1000 ${
+      className={`xs:text-sm sm:text-base md:text-xl px-5 py-[6px] md:py-[10px] text-white relative overflow-hidden group z-10 hover:text-white duration-1000 ${
         fullWidth ? "w-full" : ""
       } ${rounded ? "rounded-full" : "rounded-md"} ${
         Icon ? "flex items-center justify-center" : ""
