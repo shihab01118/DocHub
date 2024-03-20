@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Button from "../../Shared/Button/Button";
 
 const Banner = () => {
   const [currentSlider, setCurrentSlider] = useState(0);
@@ -32,15 +33,10 @@ const Banner = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.7, ease: "easeOut" }}
+            className="space-x-3"
           >
-            <button className="md:text-xl px-5 py-3 bg-primary text-white relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-md">
-              <span className="absolute bg-dark w-[250px] h-[250px] -left-8 -top-[92px] rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
-              Get Appointment
-            </button>
-            <button className="md:text-xl px-5 py-3 bg-dark text-white relative overflow-hidden group z-10 hover:text-white duration-1000  rounded-md ml-3">
-              <span className="absolute bg-primary size-44 -left-5 -top-[60px] rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
-              Learn More
-            </button>
+            <Button value="Get Appointment" />
+            <Button value="Learn More" dark />
           </motion.div>
         </div>
       </div>
@@ -74,15 +70,10 @@ const Banner = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.7, ease: "easeOut" }}
+            className="space-x-3"
           >
-            <button className="md:text-xl px-5 py-3 bg-primary text-white relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-md">
-              <span className="absolute bg-dark w-[250px] h-[250px] -left-8 -top-[92px] rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
-              Get Appointment
-            </button>
-            <button className="md:text-xl px-5 py-3 bg-dark text-white relative overflow-hidden group z-10 hover:text-white duration-1000  rounded-md ml-3">
-              <span className="absolute bg-primary size-44 -left-5 -top-[60px] rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
-              Learn More
-            </button>
+            <Button value="Get Appointment" />
+            <Button value="Learn More" dark />
           </motion.div>
         </div>
       </div>
@@ -116,15 +107,10 @@ const Banner = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.7, ease: "easeOut" }}
+            className="space-x-3"
           >
-            <button className="md:text-xl px-5 py-3 bg-primary text-white relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-md">
-              <span className="absolute bg-dark w-[250px] h-[250px] -left-8 -top-[92px] rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
-              Get Appointment
-            </button>
-            <button className="md:text-xl px-5 py-3 bg-dark text-white relative overflow-hidden group z-10 hover:text-white duration-1000  rounded-md ml-3">
-              <span className="absolute bg-primary size-44 -left-5 -top-[60px] rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
-              Learn More
-            </button>
+            <Button value="Get Appointment" />
+            <Button value="Learn More" dark />
           </motion.div>
         </div>
       </div>

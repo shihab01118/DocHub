@@ -4,6 +4,7 @@ import Drawer from "react-modern-drawer";
 import Logo from "../Logo/Logo";
 import Avatar from "../../Avatar/Avatar";
 import { FiMenu, FiX } from "react-icons/fi";
+import Button from "../Button/Button";
 
 const NavbarBottom = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,9 +52,7 @@ const NavbarBottom = () => {
             <Avatar />
           ) : (
             <Link to="/login">
-              <button className="rounded-md border-2 border-primary px-8 py-2 text-xl text-primary duration-500 transition hover:bg-primary hover:text-white">
-                Login
-              </button>
+              <Button value="Login" />
             </Link>
           )}
         </div>

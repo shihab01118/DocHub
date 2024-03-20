@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.svg";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import GoogleButton from "../../components/Shared/Button/GoogleButton";
+import Logo from "../../components/Shared/Logo/Logo";
+import Button from "../../components/Shared/Button/Button";
 
 const Signup = () => {
   const [visible, setVisible] = useState(false);
@@ -19,52 +20,34 @@ const Signup = () => {
       <Helmet>
         <title>DocHub - Signup</title>
       </Helmet>
-      <section className="bg-signup min-h-screen bg-cover bg-no-repeat bg-center relative">
+      <section className="min-h-screen relative">
         {/* Overlay covering the entire section */}
-        <div className="bg-title absolute inset-0 opacity-40 z-0"></div>
+        {/* <div className="bg-title absolute inset-0 opacity-40 z-0"></div> */}
 
-        {/* title */}
-        <div className="max-w-7xl mx-auto py-3 px-2 md:flex justify-between items-center z-20 relative hidden">
+        {/* Navbar */}
+        <div className="max-w-6xl mx-auto py-3 px-2 md:flex justify-between items-center z-20 hidden">
           <Link to="/">
-            <div className="flex items-center gap-2 lg:gap-3 ">
-              <img
-                src={logo}
-                alt="logo-img"
-                className="xs:w-8 sm:w-10 lg:w-12"
-              />
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-title">
-                DocHub
-              </h2>
-            </div>
+            <Logo />
           </Link>
           <Link to="/login">
-            <span className="text-xl font-light italic text-white/90">
+            <span className="text-xl font-light italic">
               Already have an account? Sign in
             </span>
           </Link>
         </div>
 
         {/* Logo for small screen */}
-        <div className="absolute z-30 left-5 top-5 md:hidden">
+        <div className="absolute z-50 left-5 top-5 md:hidden">
           <Link to="/">
-            <div className="flex items-center gap-2 lg:gap-3">
-              <img
-                src={logo}
-                alt="logo-img"
-                className="xs:w-8 sm:w-10 lg:w-12"
-              />
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-title">
-                DocHub
-              </h2>
-            </div>
+            <Logo />
           </Link>
         </div>
 
         {/* Signup form */}
         <div className="flex items-center justify-center min-h-screen md:min-h-[calc(100vh-72px)] relative z-20">
-          <div className="md:max-w-md w-full xs:flex xs:items-center xs:h-screen md:h-fit bg-white/30 backdrop-blur-md md:rounded-lg xs:p-4 sm:p-8">
+          <div className="md:max-w-md w-full xs:flex xs:items-center xs:h-screen md:h-fit bg-white md:rounded-lg xs:p-4 sm:p-8 border border-[#eee] drop-shadow-sm">
             <div className="w-full max-w-md mx-auto">
-              <h2 className="text-center text-3xl text-title font-bold">
+              <h2 className="text-center text-3xl text-dark font-bold">
                 Create Account
               </h2>
 
@@ -76,7 +59,7 @@ const Signup = () => {
                     type="text"
                     name="name"
                     placeholder="Name"
-                    className="w-full h-11 px-6 rounded-full bg-white/30 focus:outline-none text-[#555] placeholder-[#777]"
+                    className="w-full h-12 px-6 rounded-full bg-white focus:outline-none text-[#555] border border-[#ddd] focus:border-primary"
                   />
                 </div>
 
@@ -86,7 +69,7 @@ const Signup = () => {
                     type="email"
                     name="email"
                     placeholder="Email"
-                    className="w-full h-11 px-6 rounded-full bg-white/30 focus:outline-none text-[#555] placeholder-[#777]"
+                    className="w-full h-12 px-6 rounded-full bg-white focus:outline-none text-[#555] border border-[#ddd] focus:border-primary"
                   />
                 </div>
 
@@ -96,13 +79,13 @@ const Signup = () => {
                     type={visible ? "text" : "password"}
                     name="password"
                     placeholder="Password"
-                    className="w-full h-11 px-6 rounded-full bg-white/30 focus:outline-none text-[#555] placeholder-[#777]"
+                    className="w-full h-12 px-6 rounded-full bg-white focus:outline-none text-[#555] border border-[#ddd] focus:border-primary"
                   />
 
                   {/* eye button */}
                   <span
                     onClick={() => setVisible(!visible)}
-                    className="absolute right-6 top-1/2 transform -translate-y-1/2 text-[#555]"
+                    className="absolute right-6 top-1/2 transform -translate-y-1/2 text-[#aaa] text-lg"
                   >
                     {visible ? <FiEyeOff /> : <FiEye />}
                   </span>
@@ -140,12 +123,8 @@ const Signup = () => {
                 </div>
 
                 {/* Signup button */}
-                <div className="flex justify-center mt-4">
-                  <input
-                    type="submit"
-                    value="Sign Up"
-                    className="w-full rounded-full bg-primary text-white h-11 font-medium cursor-pointer active:scale-95 transition-all hover:bg-sky"
-                  />
+                <div className="mt-5">
+                  <Button value="Sign Up" submit fullWidth rounded />
                 </div>
               </form>
 
