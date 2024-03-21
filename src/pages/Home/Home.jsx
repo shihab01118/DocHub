@@ -3,6 +3,7 @@ import Banner from "../../components/Home/Banner/Banner";
 import Display from "../../components/Home/Display/Display";
 import Features from "../../components/Home/Features/Features";
 import Stats from "../../components/Home/Stats/Stats";
+import NewsLetter from "../../components/Shared/NewsLetter/NewsLetter";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         </div>
         <Features />
         <Stats />
+        <NewsLetter />
       </section>
     </>
   );

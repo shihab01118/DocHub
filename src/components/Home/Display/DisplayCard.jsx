@@ -26,7 +26,7 @@ DisplayCard.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   content: PropTypes.node,
-  Icon: PropTypes.string,
+  Icon: PropTypes.elementType,
 };
 
 export default DisplayCard;

@@ -7,7 +7,7 @@ const StatsCard = ({ img, imgHovered, count, text }) => {
 
   return (
     <div
-      className="flex flex-col md:flex-row gap-3 md:gap-8 lg:gap-4 xl:gap-8 group"
+      className="flex flex-col md:flex-row gap-3 md:gap-8 lg:gap-4 xl:gap-8 group min-h-auto"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -22,9 +22,10 @@ const StatsCard = ({ img, imgHovered, count, text }) => {
         <CountUp
           start={0}
           end={count}
-          duration={3}
+          duration={2}
           separator=","
           className="text-3xl font-bold mb-[6px]"
+          enableScrollSpy={true}
         />
         <span className="font-medium">{text}</span>
       </div>
