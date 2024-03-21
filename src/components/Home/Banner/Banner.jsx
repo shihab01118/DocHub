@@ -11,18 +11,18 @@ const Banner = () => {
       <div className="max-w-6xl mx-auto h-full flex items-center">
         <div className="max-w-[448px] md:max-w-[648px] lg:max-w-2xl w-full lg:-mt-40">
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className="text-3xl md:text-5xl font-bold text-dark capitalize"
           >
             We Provide <span className="text-primary">medical</span> services
             that you can <span className="text-primary">trust!</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="font-poppins my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
           >
             Experience Trusted Excellence in Medical Care: Comprehensive
@@ -32,7 +32,7 @@ const Banner = () => {
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
             className="space-x-3"
           >
             <Button value="Get Appointment" />
@@ -48,18 +48,18 @@ const Banner = () => {
       <div className="max-w-6xl mx-auto h-full flex items-center">
         <div className="max-w-xl md:max-w-2xl lg:-mt-40">
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className="text-3xl md:text-5xl font-bold text-dark capitalize"
           >
             We Provide <span className="text-primary">medical</span> services
             that you can <span className="text-primary">trust!</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="font-poppins my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
           >
             Experience Trusted Excellence in Medical Care: Comprehensive
@@ -69,7 +69,7 @@ const Banner = () => {
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
             className="space-x-3"
           >
             <Button value="Get Appointment" />
@@ -85,18 +85,18 @@ const Banner = () => {
       <div className="max-w-6xl mx-auto h-full flex items-center">
         <div className="max-w-xl md:max-w-2xl lg:-mt-40">
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className="text-3xl md:text-5xl font-bold text-dark capitalize"
           >
             We Provide <span className="text-primary">medical</span> services
             that you can <span className="text-primary">trust!</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="font-poppins my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
           >
             Experience Trusted Excellence in Medical Care: Comprehensive
@@ -106,7 +106,7 @@ const Banner = () => {
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
             className="space-x-3"
           >
             <Button value="Get Appointment" />
