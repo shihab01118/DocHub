@@ -1,15 +1,15 @@
 import SectionTitle from "../../Shared/Title/SectionTitle";
-import HelpCard from "./HelpCard";
+import FeatureCard from "./FeatureCard";
 
 // icons
 import ambulance from "../../../assets/icons/ambulance.png";
 import ambulance_white from "../../../assets/icons/ambulance-white.png";
-import medical from "../../../assets/icons/medical-symbol.png";
-import medical_white from "../../../assets/icons/medical-symbol-white.png";
+import medical from "../../../assets/icons/medical.png";
+import medical_white from "../../../assets/icons/medical_white.png";
 import stethoscope from "../../../assets/icons/doctor.png";
 import stethoscope_White from "../../../assets/icons/doctor-white.png";
 
-const Help = () => {
+const Features = () => {
   const spans = [];
 
   for (let i = 0; i < 20; i++) {
@@ -31,19 +31,19 @@ const Help = () => {
         subtitle="Providing Compassionate Support for Every Aspect of Your Family's Needs and Beyond."
       />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0 relative">
-        <HelpCard
+        <FeatureCard
           img={ambulance}
           imgHovered={ambulance_white}
           title="Emergency Help"
           subtitle="Access Urgent Assistance Quickly, Anytime, Anywhere, Without Hesitation."
         />
-        <HelpCard
+        <FeatureCard
           img={medical}
           imgHovered={medical_white}
           title="Enriched Pharmecy"
           subtitle=" Trusted Partner for Comprehensive Pharmaceutical Solutions and Healthcare."
         />
-        <HelpCard
+        <FeatureCard
           img={stethoscope}
           imgHovered={stethoscope_White}
           title="Medical Treatment"
@@ -60,4 +60,4 @@ const Help = () => {
   );
 };
 
-export default Help;
+export default Features;

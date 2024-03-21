@@ -11,7 +11,7 @@ const HelpCard = ({ title, subtitle, img, imgHovered }) => {
       className="px-8 py-2 group"
     >
       <div className="w-24 h-24 rounded-full border border-[#dddddd] flex justify-center items-center mx-auto  group-hover:bg-primary transition-all">
-        <img src={hovered ? imgHovered : img} alt="" className="w-12 h-12" />
+        <img src={hovered ? imgHovered : img} alt="icon" className="w-12 h-12" />
       </div>
       <h3 className="text-dark text-center text-2xl font-bold mt-8 mb-5">
         {title}

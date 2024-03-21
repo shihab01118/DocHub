@@ -28,12 +28,10 @@ export default {
           "url('https://images.unsplash.com/photo-1533283986565-dcb510874ba8')",
         signup:
           "url('https://img.freepik.com/free-photo/beautiful-view-lake-surrounded-by-mountains-with-glowing-sun-background_181624-24090.jpg')",
-        carousel1:
-          "url('https://mediplus-nextjs.vercel.app/_next/static/media/slider2.25fad811.jpg')",
-        carousel2:
-          "url('https://mediplus-nextjs.vercel.app/_next/static/media/slider.f76040ee.jpg')",
-        carousel3:
-          "url('https://mediplus-nextjs.vercel.app/_next/static/media/slider3.5dc7b668.jpg')",
+        carousel1: "url('https://i.ibb.co/mR0CXTB/doctor-1.jpg')",
+        carousel2: "url('https://i.ibb.co/YdZYv6H/doctor-2.jpg')",
+        carousel3: "url('https://i.ibb.co/4tQBpr7/doctor-3.jpg')",
+        reliableHands: "url('https://i.ibb.co/Z18VL95/Reliable-Hands.jpg')",
       },
     },
   },
