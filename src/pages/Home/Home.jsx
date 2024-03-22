@@ -5,6 +5,7 @@ import Features from "../../components/Home/Features/Features";
 import Stats from "../../components/Home/Stats/Stats";
 import NewsLetter from "../../components/Shared/NewsLetter/NewsLetter";
 import Services from "../../components/Home/Service/Services";
+import Emergency from "../../components/Home/Emergency/Emergency";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         <Features />
         <Stats />
         <Services />
+        <Emergency />
         <NewsLetter />
       </section>
     </>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ value, submit, fullWidth, rounded, dark, Icon }) => {
+const Button = ({ value, submit, fullWidth, rounded, dark, Icon, white }) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleButtonClick = () => {
@@ -18,7 +18,9 @@ const Button = ({ value, submit, fullWidth, rounded, dark, Icon }) => {
         fullWidth ? "w-full" : ""
       } ${rounded ? "rounded-full" : "rounded-md"} ${
         Icon ? "flex items-center justify-center" : ""
-      } ${dark ? "bg-dark" : "bg-primary"} ${isClicked ? "scale-95" : ""}`}
+      } ${dark ? "bg-dark" : "bg-primary"} ${isClicked ? "scale-95" : ""} ${
+        white ? "border border-white" : ""
+      }`}
       onClick={handleButtonClick}
     >
       <span
@@ -37,6 +39,7 @@ Button.propTypes = {
   fullWidth: PropTypes.bool,
   rounded: PropTypes.bool,
   dark: PropTypes.bool,
+  white: PropTypes.bool,
   Icon: PropTypes.string,
 };
 
