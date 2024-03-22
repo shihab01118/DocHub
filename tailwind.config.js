@@ -32,6 +32,7 @@ export default {
         carousel2: "url('https://i.ibb.co/YdZYv6H/doctor-2.jpg')",
         carousel3: "url('https://i.ibb.co/4tQBpr7/doctor-3.jpg')",
         reliableHands: "url('https://i.ibb.co/Z18VL95/Reliable-Hands.jpg')",
+        hospital1: "url('https://i.ibb.co/g4t3NLL/hospital-1.jpg')",
       },
     },
   },

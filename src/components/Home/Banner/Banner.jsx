@@ -134,10 +134,10 @@ const Banner = () => {
 
   // slide autoplay handler
   useEffect(() => {
-    // const intervalId = setInterval(() => {
-    //   nextSlider();
-    // }, 4500);
-    // return () => clearInterval(intervalId);
+    const intervalId = setInterval(() => {
+      nextSlider();
+    }, 3500);
+    return () => clearInterval(intervalId);
   }, [nextSlider]);
 
   return (

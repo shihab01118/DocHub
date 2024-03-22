@@ -1,5 +1,6 @@
 import SectionTitle from "../../Shared/Title/SectionTitle";
 import FeatureCard from "./FeatureCard";
+import SectionContainer from "../../Shared/Container/SectionContainer";
 
 // icons
 import ambulance from "../../../assets/icons/ambulance.png";
@@ -25,7 +26,7 @@ const Features = () => {
   );
 
   return (
-    <section className="max-w-6xl mx-auto px-4 lg:px-12 xl:px-0 py-12 md:py-16 lg:py-24">
+    <SectionContainer>
       <SectionTitle
         title="We Are Always Ready To Help You & Your Family"
         subtitle="Providing Compassionate Support for Every Aspect of Your Family's Needs and Beyond."
@@ -56,7 +57,7 @@ const Features = () => {
           {dots}
         </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 };
 
