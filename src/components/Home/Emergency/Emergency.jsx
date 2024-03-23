@@ -16,8 +16,8 @@ const Emergency = () => {
           56789 for emergency care.
         </p>
         <div className="flex gap-3 justify-center mt-6">
-          <Button value="Contact Now" white />
-          <Button value="Learn More" dark white />
+          <Button value="Contact Now" bordered />
+          <Button value="Learn More" dark bordered />
         </div>
       </div>
     </section>

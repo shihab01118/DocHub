@@ -1,7 +1,15 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ value, submit, fullWidth, rounded, dark, Icon, white }) => {
+const Button = ({
+  value,
+  submit,
+  fullWidth,
+  rounded,
+  dark,
+  Icon,
+  bordered,
+}) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleButtonClick = () => {
@@ -19,7 +27,7 @@ const Button = ({ value, submit, fullWidth, rounded, dark, Icon, white }) => {
       } ${rounded ? "rounded-full" : "rounded-md"} ${
         Icon ? "flex items-center justify-center" : ""
       } ${dark ? "bg-dark" : "bg-primary"} ${isClicked ? "scale-95" : ""} ${
-        white ? "border border-white" : ""
+        bordered ? "border border-white" : ""
       }`}
       onClick={handleButtonClick}
     >
@@ -39,7 +47,7 @@ Button.propTypes = {
   fullWidth: PropTypes.bool,
   rounded: PropTypes.bool,
   dark: PropTypes.bool,
-  white: PropTypes.bool,
+  bordered: PropTypes.bool,
   Icon: PropTypes.string,
 };
 
