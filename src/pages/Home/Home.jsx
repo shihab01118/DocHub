@@ -8,6 +8,7 @@ import Services from "../../components/Home/Service/Services";
 import Emergency from "../../components/Home/Emergency/Emergency";
 import Portfoilio from "../../components/Home/Portfolio/Portfoilio";
 import Partners from "../../components/Home/Partners/Partners";
+import Testimonials from "../../components/Home/Testimonials/Testimonials";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
         <Services />
         <Emergency />
         <Portfoilio />
+        <Testimonials />
         <Partners />
         <NewsLetter />
       </section>

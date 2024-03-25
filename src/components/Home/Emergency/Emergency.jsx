@@ -2,7 +2,7 @@ import Button from "../../Shared/Button/Button";
 
 const Emergency = () => {
   return (
-    <section className="bg-hospital1 py-16 lg:py-24 bg-fixed bg-cover bg-center bg-no-repeat relative">
+    <section className="bg-paralax1 py-16 lg:py-24 bg-fixed bg-cover bg-center bg-no-repeat relative">
       {/* overlay */}
       <div className="bg-primary absolute inset-0 opacity-80 z-0"></div>
 

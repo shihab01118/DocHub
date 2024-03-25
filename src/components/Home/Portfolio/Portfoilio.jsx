@@ -2,11 +2,11 @@ import { Autoplay } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../../Shared/Title/SectionTitle";
+import PortfolioCard from "./PortfolioCard";
 
 // styles
 import "swiper/css";
 import "swiper/css/autoplay";
-import PortfolioCard from "./PortfolioCard";
 
 const Portfoilio = () => {
   return (
