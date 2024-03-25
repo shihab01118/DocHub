@@ -14,9 +14,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 120 && !isVisible) {
+      if (window.scrollY > 160) {
         setIsVisible(true);
-      } else if (window.scrollY <= 120 && isVisible) {
+      } else {
         setIsVisible(false);
       }
     };
@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav id="nav" className={`w-full z-10 ${isVisible ? "hidden" : ""}`}>
+      <nav id="nav" className="w-full z-10">
         {/* top part of navbar */}
         <NavbarTop />
 
