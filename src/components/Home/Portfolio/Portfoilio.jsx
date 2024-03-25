@@ -20,7 +20,7 @@ const Portfoilio = () => {
           modules={[Autoplay]}
           spaceBetween={20}
           slidesPerView={4}
-          autoplay={{ delay: 4000 }}
+          autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
           loop={true}
           breakpoints={{
             320: {
