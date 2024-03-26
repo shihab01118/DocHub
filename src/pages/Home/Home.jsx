@@ -9,6 +9,7 @@ import Emergency from "../../components/Home/Emergency/Emergency";
 import Portfoilio from "../../components/Home/Portfolio/Portfoilio";
 import Partners from "../../components/Home/Partners/Partners";
 import Testimonials from "../../components/Home/Testimonials/Testimonials";
+import About from "../../components/Home/About/About";
 
 const Home = () => {
   return (
@@ -27,6 +28,7 @@ const Home = () => {
         <Emergency />
         <Portfoilio />
         <Testimonials />
+        <About />
         <Partners />
         <NewsLetter />
       </section>

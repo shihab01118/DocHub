@@ -34,6 +34,7 @@ export default {
         reliableHands: "url('https://i.ibb.co/Z18VL95/Reliable-Hands.jpg')",
         paralax1: "url('https://i.ibb.co/g4t3NLL/hospital-1.jpg')",
         paralax2: "url('https://i.ibb.co/LzYLWp5/doc-patient-1.jpg')",
+        thumbnail: "url('https://i.ibb.co/jG9WgZq/doctor-patient-02.jpg')",
       },
     },
   },

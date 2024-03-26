@@ -22,7 +22,7 @@ const Testimonials = () => {
         <Swiper
           modules={[Autoplay]}
           slidesPerView={3}
-          autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
+          autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
           loop={true}
           breakpoints={{
             320: {
