@@ -3,7 +3,7 @@ import Button from "../Shared/Button/Button";
 
 const ContactForm = () => {
   return (
-    <section className="lg:rounded-md md:drop-shadow-md bg-white max-w-6xl mx-4 lg:mx-12 xl:mx-auto my-12 md:my-16 lg:my-24">
+    <section className="lg:rounded-md md:drop-shadow-md bg-white max-w-6xl mx-4 lg:mx-12 xl:mx-auto mt-12 md:mt-16 lg:mt-24">
       <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-0">
         <div className="lg:w-1/2">
           <img
