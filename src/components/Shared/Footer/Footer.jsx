@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="bg-[#01A0A4] py-12 md:py-16 lg:py-[100px]">
-        <div className="max-w-6xl mx-auto px-4 lg:px-12 xl:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-4  font-poppins">
+        <div className="max-w-6xl mx-auto px-4 lg:px-12 xl:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-4">
           <div className="lg:pr-4">
             <h3 className="text-white text-xl font-semibold pb-5 mb-10 relative">
               About Us
@@ -121,7 +121,7 @@ const Footer = () => {
             </h3>
             <p className="text-[#eee]">
               Explore our convenient operating hours designed to accommodate
-              your schedule to healthcare services.
+              your schedule to healthcare.
             </p>
             <div className="mt-6 text-[#eee]">
               <div className="flex justify-between">
@@ -161,7 +161,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-primary text-white text-center px-4 lg:px-12: lg:px-0 py-7">
-        <p>{`© Copyright ${new Date().getFullYear()} | All Rights Reserved by DocHub`}</p>
+        <p className="">{`© Copyright ${new Date().getFullYear()} | All Rights Reserved by DocHub`}</p>
       </div>
     </footer>
   );

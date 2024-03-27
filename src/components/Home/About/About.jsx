@@ -15,7 +15,7 @@ const About = () => {
       />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 relative">
         <div>
-          <h3 className="text-dark text-2xl font-semibold font-poppins pb-5 mb-6">
+          <h3 className="text-dark text-2xl font-semibold pb-5 mb-6 relative">
             Who We Are
             <span className="bg-primary h-[2px] w-12 absolute left-0 bottom-0"></span>
           </h3>

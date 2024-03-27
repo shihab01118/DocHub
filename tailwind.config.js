@@ -20,7 +20,7 @@ export default {
       xxl: "1400px",
     },
     fontFamily: {
-      poppins: "'Poppins', sans-serif",
+      inter: "'Inter', sans-serif",
     },
     extend: {
       backgroundImage: {
@@ -35,6 +35,7 @@ export default {
         paralax1: "url('https://i.ibb.co/g4t3NLL/hospital-1.jpg')",
         paralax2: "url('https://i.ibb.co/LzYLWp5/doc-patient-1.jpg')",
         thumbnail: "url('https://i.ibb.co/jG9WgZq/doctor-patient-02.jpg')",
+        about: "url('https://i.ibb.co/xC7WrYQ/about-img.jpg')",
       },
     },
   },

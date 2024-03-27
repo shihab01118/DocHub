@@ -52,7 +52,7 @@ const Avatar = () => {
           />
         ) : (
           <div className="flex justify-center items-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-light hover:border-2 hover:border-primary">
-            <span className="text-2xl font-poppins text-primary uppercase">
+            <span className="text-2xl text-primary uppercase">
               {user?.email.slice(0, 1)}
             </span>
           </div>

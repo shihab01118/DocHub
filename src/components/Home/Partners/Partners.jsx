@@ -13,7 +13,7 @@ const Partners = () => {
   return (
     <section className="bg-reliableHands py-16 lg:py-24 relative">
       {/* overlay */}
-      <div className="bg-primary absolute inset-0 opacity-80 z-0"></div>
+      <div className="bg-primary absolute inset-0 opacity-75 z-0"></div>
 
       {/* content */}
       <div className="max-w-6xl mx-auto px-4 lg:px-12 xl:px-0 relative z-10">

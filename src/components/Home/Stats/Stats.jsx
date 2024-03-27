@@ -14,7 +14,7 @@ const Stats = () => {
   return (
     <section className="bg-reliableHands py-16 lg:py-[120px] relative">
       {/* overlay */}
-      <div className="bg-primary absolute inset-0 opacity-80 z-0"></div>
+      <div className="bg-primary absolute inset-0 opacity-75 z-0"></div>
 
       {/* contents */}
       <div className="grid grid-cols-1 gap-10 w-fit md:grid-cols-2 lg:grid-cols-4 lg:w-auto lg:gap-0 max-w-6xl mx-auto px-4 lg:px-12 xl:px-0 relative z-10">

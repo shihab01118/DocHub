@@ -7,7 +7,7 @@ const ServiceCard = ({ img, address, title, description }) => {
       <img src={img} alt="" className="w-[45px] h-[50px]" />
       <div>
         <Link to={address}>
-          <h3 className="text-dark hover:text-primary transition duration-300 text-2xl font-semibold font-poppins">
+          <h3 className="text-dark hover:text-primary transition duration-300 text-2xl font-semibold">
             {title}
           </h3>
         </Link>

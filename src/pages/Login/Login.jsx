@@ -20,8 +20,6 @@ const Login = () => {
         <title>DocHub - Login</title>
       </Helmet>
       <section className="min-h-screen relative">
-        {/* Overlay covering the entire section */}
-        {/* <div className="bg-dark absolute inset-0 opacity-30 z-0"></div> */}
 
         {/* Navbar */}
         <div className="max-w-6xl mx-auto py-3 px-2 md:flex justify-between items-center z-20 hidden">

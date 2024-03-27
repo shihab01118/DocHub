@@ -7,7 +7,7 @@ const NewsLetter = () => {
     <section className="bg-[#EDF2FF] py-14 lg:py-0 lg:pt-10 lg:pb-6">
       <div className="max-w-6xl mx-auto px-4 lg:px-12 xl:px-0 flex flex-col-reverse lg:flex-row items-center justify-between">
         <div className="max-w-lg text-center lg:text-left">
-          <h2 className="text-xl md:text-2xl font-semibold font-poppins text-dark mb-2">
+          <h2 className="text-xl md:text-2xl font-semibold text-dark mb-2">
             Subscribe for Newsletter
           </h2>
           <p className="text-[#757575] text-sm md:text-base leading-6">

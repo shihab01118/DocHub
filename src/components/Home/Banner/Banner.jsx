@@ -23,7 +23,7 @@ const Banner = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="font-poppins my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
+            className="my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
           >
             Experience Trusted Excellence in Medical Care: Comprehensive
             Services Delivered <br className="hidden xl:block" /> with
@@ -60,7 +60,7 @@ const Banner = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="font-poppins my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
+            className="my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
           >
             Experience Trusted Excellence in Medical Care: Comprehensive
             Services Delivered <br className="hidden xl:block" /> with
@@ -97,7 +97,7 @@ const Banner = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="font-poppins my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
+            className="my-4 md:my-7 leading-7 text-dark text-sm sm:text-base"
           >
             Experience Trusted Excellence in Medical Care: Comprehensive
             Services Delivered <br className="hidden xl:block" /> with

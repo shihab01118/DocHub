@@ -11,7 +11,7 @@ const Testimonials = () => {
   return (
     <section className="bg-paralax2 bg-center bg-cover bg-no-repeat bg-fixed py-16 lg:py-24 relative">
       {/* overlay */}
-      <div className="bg-primary absolute inset-0 opacity-80 z-0"></div>
+      <div className="bg-primary absolute inset-0 opacity-75 z-0"></div>
 
       {/* content */}
       <div className="relative max-w-6xl mx-auto px-4 lg:px-12 xl:px-0">

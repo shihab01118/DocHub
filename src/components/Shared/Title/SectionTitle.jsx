@@ -4,7 +4,7 @@ import pulseWhite from "../../../assets/icons/pulse_white.svg";
 
 const SectionTitle = ({ title, subtitle, white }) => {
   return (
-    <div className="w-full max-w-[288px] sm:max-w-[338px] md:max-w-[520px] lg:max-w-[475px] xl:max-w-[620px] mx-auto font-poppins z-50 mb-7 md:mb-9 lg:mb-14">
+    <div className="w-full max-w-[288px] sm:max-w-[338px] md:max-w-[520px] lg:max-w-[475px] xl:max-w-[620px] mx-auto z-50 mb-7 md:mb-9 lg:mb-14">
       <h2
         className={`text-[22px] md:text-2xl lg:text-[32px] font-semibold text-dark ${
           white ? "text-white" : ""
