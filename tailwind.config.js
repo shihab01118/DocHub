@@ -10,6 +10,7 @@ export default {
       error: "#E91E63",
       sky: "#03B8D7",
       ash: "#888888",
+      lightAsh: "#dddddd",
     },
     screens: {
       xs: "0px",
