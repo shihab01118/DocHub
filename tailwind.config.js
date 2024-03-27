@@ -36,6 +36,7 @@ export default {
         paralax2: "url('https://i.ibb.co/LzYLWp5/doc-patient-1.jpg')",
         thumbnail: "url('https://i.ibb.co/jG9WgZq/doctor-patient-02.jpg')",
         about: "url('https://i.ibb.co/xC7WrYQ/about-img.jpg')",
+        mission: "url('https://i.ibb.co/xzFQ4Sc/mission-img.jpg')",
       },
     },
   },

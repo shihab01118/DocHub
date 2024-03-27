@@ -2,7 +2,7 @@ import { GiCheckMark } from "react-icons/gi";
 
 const AboutArea = () => {
   return (
-    <section className="pt-12 md:pt-16 lg:pt-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
+    <section className="pt-12 md:pt-16 lg:pt-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-0 max-w-6xl mx-auto">
       {/* image */}
       <div className="bg-about w-full lg:w-[550px] xl:w-[675px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[560px] bg-center bg-cover bg-no-repeat"></div>
 
