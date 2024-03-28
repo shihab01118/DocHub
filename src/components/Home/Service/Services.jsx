@@ -18,7 +18,7 @@ const Services = () => {
         subtitle="Explore Our Range of Health Services Tailored to Enhance Your Well-being"
       />
       <div className="space-y-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services?.map((service) => (
             <ServiceCard
               key={service?.id}

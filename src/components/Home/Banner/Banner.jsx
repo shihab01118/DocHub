@@ -9,12 +9,13 @@ const Banner = () => {
   const slide1 = (
     <div className="min-w-full h-80 sm:h-96 md:h-[600px] bg-carousel1 bg-center bg-cover bg-no-repeat px-4 lg:px-12 xl:px-0">
       <div className="max-w-6xl mx-auto h-full flex items-center">
-        <div className="max-w-[448px] md:max-w-[648px] lg:max-w-2xl w-full lg:-mt-40">
+        <div className="max-w-xl md:max-w-[685px] lg:-mt-40">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className="text-3xl md:text-5xl font-bold text-dark capitalize"
+            style={{ lineHeight: 1.3 }}
           >
             We Provide <span className="text-primary">medical</span> services
             that you can <span className="text-primary">trust!</span>
@@ -46,12 +47,13 @@ const Banner = () => {
   const slide2 = (
     <div className="min-w-full h-80 sm:h-96 md:h-[600px] bg-carousel2 bg-center bg-cover bg-no-repeat  px-4 lg:px-12 xl:px-0">
       <div className="max-w-6xl mx-auto h-full flex items-center">
-        <div className="max-w-xl md:max-w-2xl lg:-mt-40">
+        <div className="max-w-xl md:max-w-[685px] lg:-mt-40">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className="text-3xl md:text-5xl font-bold text-dark capitalize"
+            style={{ lineHeight: 1.3 }}
           >
             We Provide <span className="text-primary">medical</span> services
             that you can <span className="text-primary">trust!</span>
@@ -83,12 +85,13 @@ const Banner = () => {
   const slide3 = (
     <div className="min-w-full h-80 sm:h-96 md:h-[600px] bg-carousel3 bg-center bg-cover bg-no-repeat  px-4 lg:px-12 xl:px-0">
       <div className="max-w-6xl mx-auto h-full flex items-center">
-        <div className="max-w-xl md:max-w-2xl lg:-mt-40">
+        <div className="max-w-xl md:max-w-[685px] lg:-mt-40">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className="text-3xl md:text-5xl font-bold text-dark capitalize"
+            style={{ lineHeight: 1.3 }}
           >
             We Provide <span className="text-primary">medical</span> services
             that you can <span className="text-primary">trust!</span>
