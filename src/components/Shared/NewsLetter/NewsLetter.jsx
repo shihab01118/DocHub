@@ -10,7 +10,7 @@ const NewsLetter = () => {
           <h2 className="text-xl md:text-2xl font-semibold text-dark mb-2">
             Subscribe for Newsletter
           </h2>
-          <p className="text-[#757575] text-sm md:text-base leading-6">
+          <p className="text-[#757575] text-sm md:text-[15px] leading-6">
             Stay informed with our newsletter subscription for the latest
             updates!
           </p>
