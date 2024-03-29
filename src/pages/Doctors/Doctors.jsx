@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 
 import Banner from "../../components/Shared/Banner/Banner";
+import SectionContainer from "../../components/Shared/Container/SectionContainer";
+import Doctor from "../../components/Doctors/Doctor";
 import NewsLetter from "../../components/Shared/NewsLetter/NewsLetter";
 
 const Doctors = () => {
@@ -11,6 +13,18 @@ const Doctors = () => {
       </Helmet>
       <section>
         <Banner heading="Meet Our Qualified Doctors" pageTitle="Doctors" />
+        <SectionContainer>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+            {doctors?.map((doc) => (
+              <Doctor
+                key={doc?.id}
+                name={doc?.name}
+                title={doc?.designation}
+                image={doc?.image}
+              />
+            ))}
+          </div>
+        </SectionContainer>
         <NewsLetter />
       </section>
     </>

@@ -28,7 +28,7 @@ const About = () => {
             We strive to deliver personalized care and innovative solutions to
             meet diverse healthcare needs.
           </p>
-          <div className="grid md:grid-cols-2 gap-7 text-ash">
+          <div className="grid md:grid-cols-2 gap-7 text-ash text-sm">
             <div className="space-y-3">
               <p className="flex items-center">
                 <IoMdArrowDroprightCircle className="text-xl text-primary mr-3" />
