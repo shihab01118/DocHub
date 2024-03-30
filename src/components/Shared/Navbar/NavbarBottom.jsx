@@ -28,7 +28,7 @@ const NavbarBottom = () => {
         <NavLink to="/appointment">Appointment</NavLink>
       </li>
       <li>
-        <NavLink to="/reviews">Reviews</NavLink>
+        <NavLink to="/pricing">Pricing</NavLink>
       </li>
       <li>
         <NavLink to="/contact">Contact</NavLink>
@@ -78,7 +78,7 @@ const NavbarBottom = () => {
                 id="divider"
                 className="border-primary border-opacity-30 mt-6 mb-5"
               />
-              <ul className="flex flex-col gap-4 items-center font-medium text-dark">
+              <ul className="flex flex-col gap-7 items-center font-medium text-dark">
                 {navLinksBottom}
                 <button onClick={toggleDrawer} className="text-error">
                   <FiX size={24} />
