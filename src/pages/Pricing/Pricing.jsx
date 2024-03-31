@@ -8,6 +8,7 @@ import PricingCard from "../../components/Pricing/PricingCard";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 import { FiFileText } from "react-icons/fi";
 import { BsHeartPulseFill } from "react-icons/bs";
+import Partners from "../../components/Home/Partners/Partners";
 
 const Pricing = () => {
   return (
@@ -33,6 +34,7 @@ const Pricing = () => {
             </div>
           </SectionContainer>
         </div>
+        <Partners />
         <NewsLetter />
       </section>
     </>

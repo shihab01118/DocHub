@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const PricingCard = ({ planTitle, price, desc, features, Icon }) => {
   return (
-    <div className="bg-white border border-[#eee] px-[35px] pt-[45px] pb-[30px]">
+    <div className="bg-white border border-[#ddd] px-[35px] pt-[45px] pb-[30px]">
       <div className="w-fit mx-auto">
         <Icon className="text-primary text-6xl md:text-7xl" />
       </div>
