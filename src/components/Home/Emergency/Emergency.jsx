@@ -1,4 +1,5 @@
 import Button from "../../Shared/Button/Button";
+import ButtonWhite from "../../Shared/Button/ButtonWhite";
 
 const Emergency = () => {
   return (
@@ -17,7 +18,7 @@ const Emergency = () => {
         </p>
         <div className="flex gap-3 justify-center mt-6">
           <Button value="Contact Now" bordered />
-          <Button value="Learn More" dark bordered />
+          <ButtonWhite value="Learn More" />
         </div>
       </div>
     </section>

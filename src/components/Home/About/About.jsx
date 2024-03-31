@@ -8,6 +8,7 @@ import SectionTitle from "../../Shared/Title/SectionTitle";
 
 const About = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   return (
     <SectionContainer>
@@ -81,19 +82,25 @@ const About = () => {
               height="100%"
               controls
               playing
+              onReady={() => setLoading(true)}
+              onStart={() => setLoading(false)}
             />
-            <button
-              className="absolute top-[2px] right-[2px] text-error w-7 h-7 bg-lightAsh rounded-full flex items-center justify-center lg:hidden"
-              onClick={() => setIsOpen(false)}
-            >
-              <FiX />
-            </button>
-            <button
-              className="absolute top-[10px] right-0 text-error rounded-full lg:flex items-center justify-center hidden text-3xl"
-              onClick={() => setIsOpen(false)}
-            >
-              <FiX />
-            </button>
+            {!loading && (
+              <div>
+                <button
+                  className="absolute top-[2px] right-[2px] text-error w-7 h-7 bg-lightAsh rounded-full flex items-center justify-center lg:hidden"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <FiX />
+                </button>
+                <button
+                  className="absolute top-[10px] right-0 text-error rounded-full lg:flex items-center justify-center hidden text-3xl"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <FiX />
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

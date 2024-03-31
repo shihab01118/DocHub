@@ -2,6 +2,12 @@ import contact from "../../assets/backgrounds/contact.jpg";
 import Button from "../Shared/Button/Button";
 
 const ContactForm = () => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("clicked");
+  }
+
   return (
     <section className="lg:rounded-md md:drop-shadow-md bg-white max-w-6xl mx-4 lg:mx-12 xl:mx-auto mt-12 md:mt-16 lg:mt-24">
       <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-0">
@@ -20,7 +26,7 @@ const ContactForm = () => {
           <p className="text-ash text-[15px]">
             If you have any questions please fell free to contact with us.
           </p>
-          <form className="mt-10 md:grid grid-cols-2 gap-4 space-y-4 md:space-y-0">
+          <form onSubmit={handleSubmit} className="mt-10 md:grid grid-cols-2 gap-4 space-y-4 md:space-y-0">
             <input
               type="text"
               placeholder="Name"
@@ -47,7 +53,7 @@ const ContactForm = () => {
               placeholder="Your Message"
             ></textarea>
             <div className="col-span-2">
-              <Button value="Send" fullWidth />
+              <Button value="Send" submit fullWidth></Button>
             </div>
           </form>
         </div>

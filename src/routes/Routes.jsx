@@ -9,6 +9,7 @@ import ErrorPage from "../pages/Error/ErrorPage";
 import Doctors from "../pages/Doctors/Doctors";
 import Faq from "../pages/Faq/Faq";
 import Pricing from "../pages/Pricing/Pricing";
+import Appointment from "../pages/Appointment/Appointment";
 
 const router = createBrowserRouter([
   {
@@ -34,11 +35,15 @@ const router = createBrowserRouter([
       },
       {
         path: "faq",
-        element: <Faq />
+        element: <Faq />,
       },
       {
         path: "pricing",
-        element: <Pricing />
+        element: <Pricing />,
+      },
+      {
+        path: "appointment",
+        element: <Appointment />,
       },
     ],
   },
