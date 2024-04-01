@@ -14,15 +14,15 @@ const Appointment = () => {
       <section>
         <Banner heading="Get Your Appointment" pageTitle="Appointment" />
         <SectionContainer>
-          <div className="lg:rounded-md md:drop-shadow-md bg-white flex ">
-            <div>
+          <div className="lg:rounded-md lg:drop-shadow-md bg-white lg:flex ">
+            <div className="hidden lg:block">
               <img
                 src={appointmentImg}
                 alt="appointment-img"
                 className="lg:rounded-l-md h-full object-cover"
               />
             </div>
-            <div className="p-10">
+            <div className="lg:p-10">
               <div>
                 <h2 className="text-[22px] md:text-[25px] font-semibold mb-[10px] text-dark">
                   Book Your Appointment

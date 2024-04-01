@@ -10,11 +10,11 @@ const AppointmentForm = () => {
     <form>
       <div>
         <h4 className="text-lg font-medium text-dark mb-4">Patient Details</h4>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* name field */}
           <div className="relative  w-full rounded-lg">
             <input
-              className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px]"
+              className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
               type="text"
               placeholder=""
             />
@@ -26,59 +26,26 @@ const AppointmentForm = () => {
             </label>
           </div>
 
-          {/* email field */}
           <div className="relative  w-full rounded-lg">
             <input
-              className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px]"
-              type="email"
-              placeholder=""
-            />
-            <label
-              className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
-              htmlFor=""
-            >
-              Email<span className="text-error">*</span>
-            </label>
-          </div>
-
-          {/* phone field */}
-          <div className="relative  w-full rounded-lg">
-            <input
-              className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px]"
-              type="text"
-              placeholder=""
-            />
-            <label
-              className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
-              htmlFor=""
-            >
-              Phone<span className="text-error">*</span>
-            </label>
-          </div>
-        </div>
-
-        <div className="flex gap-5 mt-5 items-center">
-          {/* address field */}
-          <div className="relative  lg:w-2/3 rounded-lg">
-            <textarea
               className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
               type="text"
               placeholder=""
-            ></textarea>
+            />
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
               htmlFor=""
             >
-              Address<span className="text-error">*</span>
+              Age<span className="text-error">*</span>
             </label>
           </div>
 
           {/* gender field */}
-          <div>
+          <div className="lg:-mt-1">
             <label className="text-sm md:text-[15px] font-medium text-dark">
               Gender<span className="text-error">*</span>
             </label>
-            <div className="mt-3">
+            <div className="mt-2 lg:mt-0">
               <label className="mr-5 text-sm md:text-[15px] text-[#666]">
                 <input
                   type="radio"
@@ -100,12 +67,60 @@ const AppointmentForm = () => {
             </div>
           </div>
         </div>
+
+        <div className="flex flex-col md:flex-row gap-5 mt-4">
+          {/* email field */}
+          <div className="relative  w-full rounded-lg">
+            <input
+              className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
+              type="email"
+              placeholder=""
+            />
+            <label
+              className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
+              htmlFor=""
+            >
+              Email<span className="text-error">*</span>
+            </label>
+          </div>
+
+          {/* phone field */}
+          <div className="relative  w-full rounded-lg">
+            <input
+              className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
+              type="text"
+              placeholder=""
+            />
+            <label
+              className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
+              htmlFor=""
+            >
+              Phone<span className="text-error">*</span>
+            </label>
+          </div>
+        </div>
+
+        {/* address field */}
+        <div className="relative rounded-lg mt-5">
+          <textarea
+            className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
+            type="text"
+            placeholder=""
+          ></textarea>
+          <label
+            className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
+            htmlFor=""
+          >
+            Address<span className="text-error">*</span>
+          </label>
+        </div>
+
         <div className="mt-[30px]">
           <h4 className="text-lg font-medium text-dark mb-4">
             Appointment Details
           </h4>
 
-          <div className="flex gap-4 mb-4">
+          <div className="flex flex-col md:flex-row gap-4 mb-4">
             {/* date-time field */}
             <div className="relative  w-full rounded-lg">
               <div className="peer">
@@ -114,7 +129,7 @@ const AppointmentForm = () => {
                   onChange={(date) => setStartDate(date)}
                   showTimeSelect
                   dateFormat="MMMM d, yyyy h:mm aa"
-                  className="rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-[350px]"
+                  className="rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-[350px] lg:w-[300px] xl:w-[350px]"
                   placeholderText=""
                 />
               </div>
