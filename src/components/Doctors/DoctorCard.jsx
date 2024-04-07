@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import Button from "../Shared/Button/Button";
 
-const Doctor = ({ image, name, title, address }) => {
+const DoctorCard = ({ image, name, title, address }) => {
   const [hovered, setHovered] = useState(false);
   return (
     <div
@@ -13,11 +13,7 @@ const Doctor = ({ image, name, title, address }) => {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="relative">
-        <img
-          src={image}
-          alt="doctor"
-          className="rounded-t-md"
-        />
+        <img src={image} alt="doctor" className="rounded-t-md" />
         {hovered && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -40,17 +36,21 @@ const Doctor = ({ image, name, title, address }) => {
       </div>
       <div className="px-5 py-6 text-center">
         <p className="text-ash text-sm leading-6 mb-1">{title}</p>
-        <h3 className="text-lg text-dark font-medium">{name}</h3>
+        <Link to={`/doctors/${name}`}>
+          <h3 className="text-lg text-dark font-medium hover:text-primary transition duration-300">
+            {name}
+          </h3>
+        </Link>
       </div>
     </div>
   );
 };
 
-Doctor.propTypes = {
+DoctorCard.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string,
   title: PropTypes.string,
   address: PropTypes.string,
 };
 
-export default Doctor;
+export default DoctorCard;

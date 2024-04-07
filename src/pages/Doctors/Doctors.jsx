@@ -2,10 +2,13 @@ import { Helmet } from "react-helmet-async";
 
 import Banner from "../../components/Shared/Banner/Banner";
 import SectionContainer from "../../components/Shared/Container/SectionContainer";
-import Doctor from "../../components/Doctors/Doctor";
+import DoctorCard from "../../components/Doctors/DoctorCard";
 import NewsLetter from "../../components/Shared/NewsLetter/NewsLetter";
+import useGetAllDoctors from "../../hooks/useGetAllDoctors";
 
 const Doctors = () => {
+  const { doctors } = useGetAllDoctors();
+
   return (
     <>
       <Helmet>
@@ -16,11 +19,12 @@ const Doctors = () => {
         <SectionContainer>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
             {doctors?.map((doc) => (
-              <Doctor
-                key={doc?.id}
+              <DoctorCard
+                key={doc?._id}
                 name={doc?.name}
-                title={doc?.designation}
-                image={doc?.image}
+                title={doc?.title}
+                image={doc?.img}
+                address={`/appointment/${doc?.name}`}
               />
             ))}
           </div>
@@ -32,42 +36,3 @@ const Doctors = () => {
 };
 
 export default Doctors;
-
-const doctors = [
-  {
-    id: 1,
-    name: "Collis Molate",
-    image: "https://i.ibb.co/FV6GjYJ/team1.webp",
-    designation: "Surgeon",
-  },
-  {
-    id: 2,
-    name: "Domani Plavon",
-    image: "https://i.ibb.co/KwmrZpZ/team2.webp",
-    designation: "Cardiologist",
-  },
-  {
-    id: 3,
-    name: "John Mard",
-    image: "https://i.ibb.co/bPX026J/team3.webp",
-    designation: "Neurologist",
-  },
-  {
-    id: 4,
-    name: "Emily Johnson",
-    image: "https://i.ibb.co/524TGX7/team5.jpg",
-    designation: "Psychiatrist",
-  },
-  {
-    id: 5,
-    name: "John Wick",
-    image: "https://i.ibb.co/VpGYDJy/team6.jpg",
-    designation: "Orthopedic Surgeon",
-  },
-  {
-    id: 6,
-    name: "Sophia Rodriguez",
-    image: "https://i.ibb.co/WPdxqVL/team4.webp",
-    designation: "Oncologist",
-  },
-];
