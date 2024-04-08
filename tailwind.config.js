@@ -11,6 +11,7 @@ export default {
       sky: "#03B8D7",
       ash: "#888888",
       lightAsh: "#dddddd",
+      transparent: "#00000000",
     },
     screens: {
       xs: "0px",
