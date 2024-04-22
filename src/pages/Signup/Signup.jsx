@@ -1,18 +1,51 @@
-import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+
+// icons
 import { FiEye, FiEyeOff } from "react-icons/fi";
+
+// components
 import GoogleButton from "../../components/Shared/Button/GoogleButton";
 import Logo from "../../components/Shared/Logo/Logo";
 import Button from "../../components/Shared/Button/Button";
+import useAuth from "../../hooks/useAuth";
+import { saveUserToDB } from "../../api/utils";
 
 const Signup = () => {
   const [visible, setVisible] = useState(false);
-
   const [checked, setChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { createUser } = useAuth();
+  const navigate = useNavigate();
 
-  const handleSignup = (e) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    setLoading(true);
+
+    if (!checked) {
+      setLoading(false);
+      return toast.error("Please agree with our terms and conditions!");
+    }
+
+    try {
+      const result = await createUser(data?.email, data?.password);
+      const user = result?.user;
+      await saveUserToDB(user, data);
+      toast.success("Registration Successful!");
+      navigate("/");
+      setLoading(false);
+    } catch (error) {
+      toast.error("Registration Failed!");
+      setLoading(false);
+    }
   };
 
   return (
@@ -21,12 +54,9 @@ const Signup = () => {
         <title>DocHub - Signup</title>
       </Helmet>
       <section className="min-h-screen relative">
-
         {/* Navbar */}
         <div className="max-w-6xl mx-auto py-3 px-2 md:flex justify-between items-center z-20 hidden">
-          <Link to="/">
-            <Logo />
-          </Link>
+          <Logo />
           <Link to="/login">
             <span className="text-xl font-light italic">
               Already have an account? Sign in
@@ -36,9 +66,7 @@ const Signup = () => {
 
         {/* Logo for small screen */}
         <div className="absolute z-50 left-5 top-5 md:hidden">
-          <Link to="/">
-            <Logo />
-          </Link>
+          <Logo />
         </div>
 
         {/* Signup form */}
@@ -50,34 +78,44 @@ const Signup = () => {
               </h2>
 
               {/* form */}
-              <form onSubmit={handleSignup} className="mt-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="mt-6">
                 {/* Name field */}
                 <div>
                   <input
                     type="text"
-                    name="name"
                     placeholder="Name"
                     className="w-full h-12 px-6 rounded-full bg-white focus:outline-none text-[#555] border border-[#ddd] focus:border-primary"
+                    {...register("name", { required: true })}
                   />
+                  {errors.name && (
+                    <span className="text-error text-sm md:text-[15px] ml-6">
+                      Name required!
+                    </span>
+                  )}
                 </div>
 
                 {/* Email field */}
                 <div className="mt-4">
                   <input
                     type="email"
-                    name="email"
                     placeholder="Email"
                     className="w-full h-12 px-6 rounded-full bg-white focus:outline-none text-[#555] border border-[#ddd] focus:border-primary"
+                    {...register("email", { required: true })}
                   />
+                  {errors.email && (
+                    <span className="text-error text-sm md:text-[15px] ml-6">
+                      Email required!
+                    </span>
+                  )}
                 </div>
 
                 {/* Password field */}
                 <div className="mt-4 relative">
                   <input
                     type={visible ? "text" : "password"}
-                    name="password"
                     placeholder="Password"
                     className="w-full h-12 px-6 rounded-full bg-white focus:outline-none text-[#555] border border-[#ddd] focus:border-primary"
+                    {...register("password", { required: true })}
                   />
 
                   {/* eye button */}
@@ -88,6 +126,11 @@ const Signup = () => {
                     {visible ? <FiEyeOff /> : <FiEye />}
                   </span>
                 </div>
+                {errors.password && (
+                  <span className="text-error text-sm md:text-[15px] ml-6">
+                    Password required!
+                  </span>
+                )}
 
                 {/* Terms and condition checkbox label */}
                 <div className="flex items-center mt-4">
@@ -122,7 +165,13 @@ const Signup = () => {
 
                 {/* Signup button */}
                 <div className="mt-5">
-                  <Button value="Sign Up" submit fullWidth rounded />
+                  <Button
+                    value="Sign Up"
+                    submit
+                    fullWidth
+                    rounded
+                    isLoading={loading}
+                  />
                 </div>
               </form>
 

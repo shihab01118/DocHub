@@ -20,12 +20,9 @@ const Login = () => {
         <title>DocHub - Login</title>
       </Helmet>
       <section className="min-h-screen relative">
-
         {/* Navbar */}
         <div className="max-w-6xl mx-auto py-3 px-2 md:flex justify-between items-center z-20 hidden">
-          <Link to="/">
-            <Logo />
-          </Link>
+          <Logo />
           <Link to="/signup">
             <span className="text-xl font-light italic text-dark">
               Don{"'"}t have an account? Create one
@@ -35,9 +32,7 @@ const Login = () => {
 
         {/* Logo for small screen */}
         <div className="absolute z-50 left-5 top-5 md:hidden">
-          <Link to="/">
-            <Logo />
-          </Link>
+          <Logo />
         </div>
 
         {/* Login form */}

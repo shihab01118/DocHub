@@ -10,6 +10,7 @@ const GoogleButton = () => {
         Icon={FcGoogle}
         rounded
         value="Continue with Google"
+        isLoading={false}
       />
     </>
   );

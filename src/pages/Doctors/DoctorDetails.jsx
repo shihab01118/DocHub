@@ -46,11 +46,15 @@ const DoctorDetails = () => {
       <section>
         <Banner heading="Doctor Details" pageTitle={name} />
         <SectionContainer>
-          <div className="grid lg:grid-cols-3">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
             <div className="drop-shadow-md rounded-lg bg-white">
               {/* doctor's image */}
-              <img src={docInfo?.img} alt={name} className="rounded-t-lg" />
-              <div className="p-10">
+              <img
+                src={docInfo?.img}
+                alt={name}
+                className="rounded-t-lg w-full"
+              />
+              <div className="xs:p-5 sm:p-10 lg:p-5 xl:p-10">
                 <h4 className="text-xl font-semibold text-dark mb-[30px]">
                   Contact Info
                 </h4>
@@ -59,7 +63,7 @@ const DoctorDetails = () => {
                 <div className="space-y-[10px] text-[#2c2d3f] mb-6">
                   <div className="flex gap-2 items-center">
                     <FaPhoneVolume className="text-primary" />
-                    <span className="text-dark">
+                    <span className="text-dark text-sm md:text-[15px]">
                       <a href={`tel:${docInfo?.contact?.phone}`}>
                         {`Call: ${docInfo?.contact?.phone}`}
                       </a>
@@ -67,15 +71,15 @@ const DoctorDetails = () => {
                   </div>
                   <div className="flex gap-2 items-center">
                     <FiMail className="text-primary" />
-                    <span className="text-dark">
+                    <span className="text-dark text-sm md:text-[15px]">
                       <a href={`mailto:${docInfo?.contact?.mail}`}>
                         {docInfo?.contact?.mail}
                       </a>
                     </span>
                   </div>
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-2 md:items-center">
                     <FaLocationDot className="text-primary" />
-                    <span className="text-dark">
+                    <span className="text-dark text-sm md:text-[15px]">
                       {docInfo?.contact?.address}
                     </span>
                   </div>
@@ -112,7 +116,7 @@ const DoctorDetails = () => {
                     {docInfo?.workingHours?.map((item) => (
                       <div
                         key={item?._id}
-                        className="flex justify-between text-[15px] text-[#2c2d3f]"
+                        className="flex justify-between text-[15px] text-[#2c2d3f] text-sm md:text-[15px]"
                       >
                         <span>{item?.days}</span>
                         <span>{item?.hours}</span>
@@ -124,7 +128,7 @@ const DoctorDetails = () => {
             </div>
 
             {/* information content */}
-            <div className="col-span-2 pl-[70px] pt-[60px]">
+            <div className="col-span-2 lg:pl-[70px] pt-[60px]">
               <h2 className="text-3xl font-semibold text-dark">
                 {docInfo?.name}
               </h2>
@@ -141,7 +145,7 @@ const DoctorDetails = () => {
                 ))}
               </p>
 
-                  {/* summary */}
+              {/* summary */}
               <div>
                 <h3 className="text-primary font-semibold text-2xl my-6">
                   Summary
@@ -160,9 +164,17 @@ const DoctorDetails = () => {
                   Education
                 </h3>
                 <div className="space-y-[10px]">
-                  {docInfo?.education?.slice().reverse().map(edu => <p key={edu?._id} className="text-[#757575] text-sm md:text-[15px] leading-6">
-                    {`${edu?.degree} (${edu?.year})`}
-                  </p>)}
+                  {docInfo?.education
+                    ?.slice()
+                    .reverse()
+                    .map((edu) => (
+                      <p
+                        key={edu?._id}
+                        className="text-[#757575] text-sm md:text-[15px] leading-6"
+                      >
+                        {`${edu?.degree} (${edu?.year})`}
+                      </p>
+                    ))}
                 </div>
               </div>
 

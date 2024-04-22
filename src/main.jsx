@@ -7,15 +7,28 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./index.css";
 import "react-datepicker/dist/react-datepicker.css";
+import AuthProvider from "./providers/AuthProvider.jsx";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
+      <AuthProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+          <Toaster
+            toastOptions={{
+              style: {
+                borderRadius: "10px",
+                background: "#333",
+                color: "#fff",
+              },
+            }}
+          />
+        </QueryClientProvider>
+      </AuthProvider>
     </HelmetProvider>
   </React.StrictMode>
 );

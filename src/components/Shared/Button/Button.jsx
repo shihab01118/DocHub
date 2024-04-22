@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { TbFidgetSpinner } from "react-icons/tb";
 
 const Button = ({
   value,
@@ -9,6 +10,7 @@ const Button = ({
   dark,
   Icon,
   bordered,
+  isLoading,
 }) => {
   const [isClicked, setIsClicked] = useState(false);
 
@@ -36,7 +38,12 @@ const Button = ({
           fullWidth ? "group-hover:w-[500px]" : "group-hover:w-[250px]"
         } group-hover:w-[250px] group-hover:h-[250px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-x-100 scale-x-0 -z-10 group-hover:duration-700 duration-500 origin-center transition-all`}
       ></span>
-      {Icon && <Icon className="mr-3 text-2xl" />} {value}
+      {Icon && !isLoading && <Icon className="mr-3 text-2xl" />}{" "}
+      {isLoading ? (
+        <TbFidgetSpinner className="w-fit mx-auto text-2xl md:text-[28px] animate-spin" />
+      ) : (
+        value
+      )}
     </button>
   );
 };
@@ -48,7 +55,8 @@ Button.propTypes = {
   rounded: PropTypes.bool,
   dark: PropTypes.bool,
   bordered: PropTypes.bool,
-  Icon: PropTypes.string,
+  Icon: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 export default Button;
