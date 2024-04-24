@@ -7,7 +7,8 @@ export const saveUserToDB = async (user, data) => {
     email: user?.email,
     photo: user?.photoURL,
     role: "patient",
-    createdAt: user?.createdAt,
+    createdAt: user?.metadata?.creationTime,
+    lastSignInAt: user?.metadata?.lastSignInTime,
   };
 
   const response = await axiosPublic.post("/users", newUser);

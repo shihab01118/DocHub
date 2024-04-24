@@ -5,15 +5,15 @@ import Logo from "../Logo/Logo";
 import Avatar from "../../Avatar/Avatar";
 import { FiMenu, FiX } from "react-icons/fi";
 import Button from "../Button/Button";
+import useAuth from "../../../hooks/useAuth";
 
 const NavbarBottom = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const {user} = useAuth();
+
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
-
-  // todo: User will be confirmed from db
-  const user = false;
 
   // navlinks
   const navLinksBottom = (

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -7,12 +7,14 @@ import toast from "react-hot-toast";
 // icons
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
+// hooks
+import useAuth from "../../hooks/useAuth";
+import { saveUserToDB } from "../../api/utils";
+
 // components
 import GoogleButton from "../../components/Shared/Button/GoogleButton";
 import Logo from "../../components/Shared/Logo/Logo";
 import Button from "../../components/Shared/Button/Button";
-import useAuth from "../../hooks/useAuth";
-import { saveUserToDB } from "../../api/utils";
 
 const Signup = () => {
   const [visible, setVisible] = useState(false);
@@ -20,6 +22,8 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
   const { createUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
 
   const {
     register,
@@ -29,6 +33,7 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     setLoading(true);
+    const toastId = toast.loading("Creating New User...");
 
     if (!checked) {
       setLoading(false);
@@ -36,13 +41,14 @@ const Signup = () => {
     }
 
     try {
-      const result = await createUser(data?.email, data?.password);
+      const result = await createUser(data?.email, data?.password); // creating user with firebase
       const user = result?.user;
-      await saveUserToDB(user, data);
-      toast.success("Registration Successful!");
-      navigate("/");
+      await saveUserToDB(user, data); // saving user to database
+      toast.success("Registration Successful!", { id: toastId }); // showing a successful login toast
+      navigate(from, { replace: true }); // navigating user after successful login
       setLoading(false);
     } catch (error) {
+      console.error(error);
       toast.error("Registration Failed!");
       setLoading(false);
     }

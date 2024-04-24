@@ -1,17 +1,47 @@
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
-import GoogleButton from "../../components/Shared/Button/GoogleButton";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+
+// icons
 import { FiEye, FiEyeOff } from "react-icons/fi";
+
+// components
+import GoogleButton from "../../components/Shared/Button/GoogleButton";
 import Logo from "../../components/Shared/Logo/Logo";
 import Button from "../../components/Shared/Button/Button";
+import useAuth from "../../hooks/useAuth";
+import { saveUserToDB } from "../../api/utils";
 
 const Login = () => {
   const [visible, setVisible] = useState(false);
   const [checked, setChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { signInUser } = useAuth();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    setLoading(true);
+    const toastId = toast.loading("Logging In...");
+
+    try {
+      const result = await signInUser(data?.email, data?.password);
+      const user = result?.user;
+      await saveUserToDB(user);
+      toast.success("Login Successful!", { id: toastId });
+      navigate("/");
+      setLoading(false);
+    } catch (error) {
+      toast.error("Invalid email/password!");
+      setLoading(false);
+    }
   };
 
   return (
@@ -44,23 +74,28 @@ const Login = () => {
               </h2>
 
               {/* form */}
-              <form onSubmit={handleLogin} className="mt-8">
+              <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
                 {/* Email field */}
                 <div>
                   <input
                     type="email"
-                    name="email"
                     placeholder="Email"
+                    {...register("email", { required: true })}
                     className="w-full h-12 px-6 rounded-full bg-white focus:outline-none text-[#555] border border-[#ddd] focus:border-primary"
                   />
                 </div>
+                {errors.email && (
+                  <span className="text-error text-sm md:text-[15px] ml-6">
+                    Email required!
+                  </span>
+                )}
 
                 {/* Password field */}
                 <div className="mt-5 relative">
                   <input
                     type={visible ? "text" : "password"}
-                    name="password"
                     placeholder="Password"
+                    {...register("password", { required: true })}
                     className="w-full h-12 px-6 rounded-full bg-white focus:outline-none text-[#555] border border-[#ddd] focus:border-primary"
                   />
 
@@ -72,6 +107,11 @@ const Login = () => {
                     {visible ? <FiEyeOff /> : <FiEye />}
                   </span>
                 </div>
+                {errors.password && (
+                  <span className="text-error text-sm md:text-[15px] ml-6">
+                    Password required!
+                  </span>
+                )}
 
                 {/* Remember & forget */}
                 <div className="flex justify-between items-center mt-4 text-[#333]">
@@ -107,7 +147,13 @@ const Login = () => {
 
                 {/* Login button */}
                 <div className="flex justify-center mt-4">
-                  <Button value="Login" submit fullWidth rounded />
+                  <Button
+                    value="Login"
+                    submit
+                    fullWidth
+                    rounded
+                    isLoading={loading}
+                  />
                 </div>
               </form>
 
