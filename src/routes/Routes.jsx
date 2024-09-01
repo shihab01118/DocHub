@@ -11,6 +11,9 @@ import Faq from "../pages/Faq/Faq";
 import Pricing from "../pages/Pricing/Pricing";
 import Appointment from "../pages/Appointment/Appointment";
 import DoctorDetails from "../pages/Doctors/DoctorDetails";
+import Profile from "../pages/Profile/Profile";
+import DashboardLayout from "../layouts/DashboardLayout";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -50,7 +53,20 @@ const router = createBrowserRouter([
         path: "appointment",
         element: <Appointment />,
       },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
     ],
+  },
+  // dashboard routes
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
   },
   {
     path: "/login",

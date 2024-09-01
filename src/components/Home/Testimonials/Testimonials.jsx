@@ -73,7 +73,7 @@ const testimonials = [
   {
     id: 1,
     name: "Emma Stone",
-    img: "https://i.ibb.co/HrFZ4wL/testi3.webp",
+    img: "https://img.freepik.com/free-photo/portrait-smiling-blonde-woman_23-2148316635.jpg",
     date: "20-03-2024",
     review:
       "Life-changing treatment! Highly recommend their expertise and compassionate care. The staff is amazing!",
@@ -81,7 +81,7 @@ const testimonials = [
   {
     id: 2,
     name: "John Doe",
-    img: "https://i.ibb.co/k17j5JG/testi1.webp",
+    img: "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg",
     date: "12-01-2024",
     review:
       "Exceptional care! Grateful for their dedication and compassionate approach to treatment. Great experience!",
@@ -89,7 +89,7 @@ const testimonials = [
   {
     id: 3,
     name: "Jane Foster",
-    img: "https://i.ibb.co/sF83m5c/testi2.webp",
+    img: "https://img.freepik.com/free-photo/front-view-serious-woman_23-2148369453.jpg",
     date: "16-09-2023",
     review:
       "Professional staff, outstanding results. Improved my health significantly. Highly recommend this facility.",
@@ -97,7 +97,7 @@ const testimonials = [
   {
     id: 4,
     name: "Kate Winslet",
-    img: "https://i.ibb.co/HrFZ4wL/testi3.webp",
+    img: "https://img.freepik.com/free-photo/fashionable-young-woman-standing-front-blue-backdrop_23-2148204718.jpg",
     date: "29-04-2023",
     review:
       "Top-notch facility! Trustworthy doctors, excellent service. Improved my health significantly. Highly recommended!",
@@ -105,7 +105,7 @@ const testimonials = [
   {
     id: 5,
     name: "Robert Downey Jr.",
-    img: "https://i.ibb.co/k17j5JG/testi1.webp",
+    img: "https://img.freepik.com/free-photo/portrait-smiley-businessman_23-2148746289.jpg",
     date: "22-02-2023",
     review:
       "Outstanding experience! Improved my health and quality of life significantly. Highly recommend this place!",

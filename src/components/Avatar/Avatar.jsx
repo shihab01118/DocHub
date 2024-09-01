@@ -45,7 +45,7 @@ const Avatar = () => {
         {currentUser?.photo ? (
           <img
             className="rounded-full w-10 h-10 sm:w-12 sm:h-12 hover:border-2 hover:border-primary"
-            src={currentUser?.photo}
+            src={`${currentUser?.photo}`}
             alt="user-img"
           />
         ) : (

@@ -33,7 +33,7 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     setLoading(true);
-    const toastId = toast.loading("Creating New User...");
+    const toastId = toast.loading("Please wait...");
 
     if (!checked) {
       setLoading(false);
@@ -43,10 +43,12 @@ const Signup = () => {
     try {
       const result = await createUser(data?.email, data?.password); // creating user with firebase
       const user = result?.user;
-      await saveUserToDB(user, data); // saving user to database
-      toast.success("Registration Successful!", { id: toastId }); // showing a successful login toast
-      navigate(from, { replace: true }); // navigating user after successful login
-      setLoading(false);
+      if (user) {
+        await saveUserToDB(user, data); // saving user to database
+        toast.success("Registration Successful!", { id: toastId }); // showing a successful login toast
+        navigate(from, { replace: true }); // navigating user after successful login
+        setLoading(false);
+      }
     } catch (error) {
       console.error(error);
       toast.error("Registration Failed!");

@@ -34,10 +34,12 @@ const Login = () => {
     try {
       const result = await signInUser(data?.email, data?.password);
       const user = result?.user;
-      await saveUserToDB(user);
-      toast.success("Login Successful!", { id: toastId });
-      navigate("/");
-      setLoading(false);
+      if (user) {
+        await saveUserToDB(user);
+        toast.success("Login Successful!", { id: toastId });
+        navigate("/");
+        setLoading(false);
+      }
     } catch (error) {
       toast.error("Invalid email/password!");
       setLoading(false);

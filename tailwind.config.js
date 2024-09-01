@@ -32,7 +32,7 @@ export default {
           "url('https://img.freepik.com/free-photo/beautiful-view-lake-surrounded-by-mountains-with-glowing-sun-background_181624-24090.jpg')",
         carousel1: "url('https://i.ibb.co/mR0CXTB/doctor-1.jpg')",
         carousel2: "url('https://i.ibb.co/YdZYv6H/doctor-2.jpg')",
-        carousel3: "url('https://i.ibb.co/4tQBpr7/doctor-3.jpg')",
+        carousel3: "url('https://i.ibb.co/P6Nh4bR/doctor-3.jpg')",
         reliableHands: "url('https://i.ibb.co/Z18VL95/Reliable-Hands.jpg')",
         paralax1: "url('https://i.ibb.co/g4t3NLL/hospital-1.jpg')",
         paralax2: "url('https://i.ibb.co/LzYLWp5/doc-patient-1.jpg')",
