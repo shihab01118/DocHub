@@ -12,6 +12,9 @@ export default {
       ash: "#888888",
       lightAsh: "#dddddd",
       transparent: "#00000000",
+      "dashboard-light": "#9FA6D1",
+      "dashboard-dark": "#2E37A4",
+      "dashboard-bg": "#f5f5f6",
     },
     screens: {
       xs: "0px",
