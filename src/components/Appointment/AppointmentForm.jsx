@@ -1,6 +1,10 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import Button from "../Shared/Button/Button";
+import useGetAllDoctors from "../../hooks/useGetAllDoctors";
+import toast from "react-hot-toast";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 const AppointmentForm = () => {
   const [patientName, setPatientName] = useState("");
@@ -10,8 +14,10 @@ const AppointmentForm = () => {
   const [contactNumber, setContactNumber] = useState("");
   const [patientAddress, setPatientAddress] = useState("");
   const [dateOfAppointment, setDateOfAppointment] = useState("");
-  const [selectedDoctor, setSelectedDoctor] = useState("");
+  const [selectedDoctorId, setSelectedDoctorId] = useState("");
   const [description, setDescription] = useState("");
+  const { doctors } = useGetAllDoctors();
+  const axiosPublic = useAxiosPublic();
 
   const handleGenderChange = (e) => {
     setGender(e.target.value);
@@ -25,13 +31,48 @@ const AppointmentForm = () => {
     setContactNumber("");
     setPatientAddress("");
     setDateOfAppointment("");
-    setSelectedDoctor("");
+    setSelectedDoctorId("");
     setDescription("");
-  }
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  }
+
+    if (!/^[0-9]*$/.test(patientAge)) {
+      return toast.error("Please enter a valid age");
+    }
+
+    const appointmentDetails = {
+      patientName: patientName,
+      patientAge: parseInt(patientAge),
+      patientGender: gender,
+      patientEmail: patientEmail,
+      patientPhone: contactNumber,
+      patientAddress: patientAddress,
+      dateOfAppointment: dateOfAppointment,
+      doctorId: selectedDoctorId,
+      descriptionOfSickness: description,
+    };
+
+    try {
+      const response = await axiosPublic.post(
+        "/appointments",
+        appointmentDetails
+      );
+      if (response.status === 201 ) {
+        Swal.fire({
+          icon: "success",
+          title: "Appointment booked successfully!",
+          text: "We will contact you soon.",
+          showConfirmButton: true,
+          confirmButtonColor: "#01B2B7"
+        });
+      }
+    } catch (error) {
+      console.error(error.message);
+      return toast.error("Something went wrong");
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -46,6 +87,7 @@ const AppointmentForm = () => {
               placeholder=""
               value={patientName}
               onChange={(e) => setPatientName(e.target.value)}
+              required
             />
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -62,6 +104,7 @@ const AppointmentForm = () => {
               placeholder=""
               value={patientAge}
               onChange={(e) => setPatientAge(e.target.value)}
+              required
             />
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -85,6 +128,7 @@ const AppointmentForm = () => {
                   className="mr-2"
                   checked={gender === "male"}
                   onChange={handleGenderChange}
+                  required
                 />
                 Male
               </label>
@@ -96,6 +140,7 @@ const AppointmentForm = () => {
                   className="mr-2"
                   checked={gender === "female"}
                   onChange={handleGenderChange}
+                  required
                 />
                 Female
               </label>
@@ -112,6 +157,7 @@ const AppointmentForm = () => {
               placeholder=""
               value={patientEmail}
               onChange={(e) => setPatientEmail(e.target.value)}
+              required
             />
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -129,6 +175,7 @@ const AppointmentForm = () => {
               placeholder=""
               value={contactNumber}
               onChange={(e) => setContactNumber(e.target.value)}
+              required
             />
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -147,6 +194,7 @@ const AppointmentForm = () => {
             placeholder=""
             value={patientAddress}
             onChange={(e) => setPatientAddress(e.target.value)}
+            required
           ></textarea>
           <label
             className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -172,6 +220,7 @@ const AppointmentForm = () => {
                   dateFormat="MMMM d, yyyy h:mm aa"
                   className="rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-[350px] lg:w-[300px] xl:w-[350px]"
                   placeholderText=""
+                  required
                 />
               </div>
               <label
@@ -186,13 +235,14 @@ const AppointmentForm = () => {
 
             <div className="w-full flex items-center relative">
               <select
-                value={selectedDoctor}
-                onChange={(e) => setSelectedDoctor(e.target.value)}
+                value={selectedDoctorId}
+                onChange={(e) => setSelectedDoctorId(e.target.value)}
                 className="w-full border border-[#ddd] rounded-lg focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] peer"
+                required
               >
                 <option value="">Select One</option>
                 {doctors?.map((doctor) => (
-                  <option key={doctor?.id} value={doctor?.name}>
+                  <option key={doctor?._id} value={doctor?._id}>
                     {doctor?.name}
                   </option>
                 ))}
@@ -215,12 +265,13 @@ const AppointmentForm = () => {
               rows="3"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              required
             ></textarea>
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
               htmlFor=""
             >
-              Add Note<span className="text-error">*</span>
+              Description of Sickness<span className="text-error">*</span>
             </label>
           </div>
 
@@ -245,42 +296,3 @@ const AppointmentForm = () => {
 };
 
 export default AppointmentForm;
-
-const doctors = [
-  {
-    id: 1,
-    name: "Collis Molate",
-    image: "https://i.ibb.co/FV6GjYJ/team1.webp",
-    designation: "Surgeon",
-  },
-  {
-    id: 2,
-    name: "Domani Plavon",
-    image: "https://i.ibb.co/KwmrZpZ/team2.webp",
-    designation: "Cardiologist",
-  },
-  {
-    id: 3,
-    name: "John Mard",
-    image: "https://i.ibb.co/bPX026J/team3.webp",
-    designation: "Neurologist",
-  },
-  {
-    id: 4,
-    name: "Emily Johnson",
-    image: "https://i.ibb.co/524TGX7/team5.jpg",
-    designation: "Psychiatrist",
-  },
-  {
-    id: 5,
-    name: "John Wick",
-    image: "https://i.ibb.co/VpGYDJy/team6.jpg",
-    designation: "Orthopedic Surgeon",
-  },
-  {
-    id: 6,
-    name: "Sophia Rodriguez",
-    image: "https://i.ibb.co/WPdxqVL/team4.webp",
-    designation: "Oncologist",
-  },
-];
