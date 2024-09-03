@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -19,6 +19,8 @@ const Login = () => {
   const [checked, setChecked] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
   const { signInUser } = useAuth();
 
   const {
@@ -37,7 +39,7 @@ const Login = () => {
       if (user) {
         await saveUserToDB(user);
         toast.success("Login Successful!", { id: toastId });
-        navigate("/");
+        navigate(from, { replace: true });
         setLoading(false);
       }
     } catch (error) {

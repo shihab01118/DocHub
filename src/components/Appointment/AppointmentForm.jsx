@@ -3,11 +3,38 @@ import DatePicker from "react-datepicker";
 import Button from "../Shared/Button/Button";
 
 const AppointmentForm = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [selectedValue, setSelectedValue] = useState("");
+  const [patientName, setPatientName] = useState("");
+  const [patientAge, setPatientAge] = useState("");
+  const [gender, setGender] = useState("");
+  const [patientEmail, setPatientEmail] = useState("");
+  const [contactNumber, setContactNumber] = useState("");
+  const [patientAddress, setPatientAddress] = useState("");
+  const [dateOfAppointment, setDateOfAppointment] = useState("");
+  const [selectedDoctor, setSelectedDoctor] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleGenderChange = (e) => {
+    setGender(e.target.value);
+  };
+
+  const handleCancel = () => {
+    setPatientName("");
+    setPatientAge("");
+    setGender("");
+    setPatientEmail("");
+    setContactNumber("");
+    setPatientAddress("");
+    setDateOfAppointment("");
+    setSelectedDoctor("");
+    setDescription("");
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <h4 className="text-lg font-medium text-dark mb-4">Patient Details</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -17,6 +44,8 @@ const AppointmentForm = () => {
               className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
               type="text"
               placeholder=""
+              value={patientName}
+              onChange={(e) => setPatientName(e.target.value)}
             />
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -26,11 +55,13 @@ const AppointmentForm = () => {
             </label>
           </div>
 
-          <div className="relative  w-full rounded-lg">
+          <div className="relative w-full rounded-lg">
             <input
               className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
               type="text"
               placeholder=""
+              value={patientAge}
+              onChange={(e) => setPatientAge(e.target.value)}
             />
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -52,6 +83,8 @@ const AppointmentForm = () => {
                   value="male"
                   name="gender"
                   className="mr-2"
+                  checked={gender === "male"}
+                  onChange={handleGenderChange}
                 />
                 Male
               </label>
@@ -61,6 +94,8 @@ const AppointmentForm = () => {
                   value="female"
                   name="gender"
                   className="mr-2"
+                  checked={gender === "female"}
+                  onChange={handleGenderChange}
                 />
                 Female
               </label>
@@ -75,6 +110,8 @@ const AppointmentForm = () => {
               className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
               type="email"
               placeholder=""
+              value={patientEmail}
+              onChange={(e) => setPatientEmail(e.target.value)}
             />
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -90,6 +127,8 @@ const AppointmentForm = () => {
               className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
               type="text"
               placeholder=""
+              value={contactNumber}
+              onChange={(e) => setContactNumber(e.target.value)}
             />
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -106,6 +145,8 @@ const AppointmentForm = () => {
             className="peer rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-full"
             type="text"
             placeholder=""
+            value={patientAddress}
+            onChange={(e) => setPatientAddress(e.target.value)}
           ></textarea>
           <label
             className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -122,11 +163,11 @@ const AppointmentForm = () => {
 
           <div className="flex flex-col md:flex-row gap-4 mb-4">
             {/* date-time field */}
-            <div className="relative  w-full rounded-lg">
+            <div className="relative  w-full rounded-lg z-50">
               <div className="peer">
                 <DatePicker
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
+                  selected={dateOfAppointment}
+                  onChange={(date) => setDateOfAppointment(date)}
                   showTimeSelect
                   dateFormat="MMMM d, yyyy h:mm aa"
                   className="rounded-lg border border-[#ddd] focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] w-[350px] lg:w-[300px] xl:w-[350px]"
@@ -145,8 +186,8 @@ const AppointmentForm = () => {
 
             <div className="w-full flex items-center relative">
               <select
-                value={selectedValue}
-                onChange={(e) => setSelectedValue(e.target.value)}
+                value={selectedDoctor}
+                onChange={(e) => setSelectedDoctor(e.target.value)}
                 className="w-full border border-[#ddd] rounded-lg focus:border-primary px-4 py-2 text-[#666] focus:outline-none text-[15px] peer"
               >
                 <option value="">Select One</option>
@@ -172,6 +213,8 @@ const AppointmentForm = () => {
               type="text"
               placeholder=""
               rows="3"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             ></textarea>
             <label
               className="absolute -top-2 left-[10px] bg-white px-2 text-xs text-[#666] duration-300 peer-placeholder-shown:left-[14px] peer-placeholder-shown:top-[10px]  peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-sm peer-focus:-top-2 peer-focus:left-[10px] peer-focus:bg-white peer-focus:text-xs peer-focus:text-primary"
@@ -187,7 +230,8 @@ const AppointmentForm = () => {
             <div>
               <button
                 type="reset"
-                className={`xs:text-sm sm:text-base md:text-xl px-5 py-[6px] md:py-[10px] text-dark relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-md bg-[#ccc] `}
+                onClick={handleCancel}
+                className={`xs:text-sm sm:text-base md:text-xl px-5 py-[6px] md:py-[10px] text-dark relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-md bg-[#ccc]`}
               >
                 <span className="absolute bg-dark w-0 h-14 group-hover:w-[250px] group-hover:h-[250px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-x-100 scale-x-0 -z-10 group-hover:duration-700 duration-500 origin-center transition-all"></span>
                 Cancel

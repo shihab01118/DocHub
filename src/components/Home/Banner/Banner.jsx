@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "../../Shared/Button/Button";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const [currentSlider, setCurrentSlider] = useState(0);
@@ -36,7 +37,9 @@ const Banner = () => {
             transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
             className="space-x-3"
           >
-            <Button value="Get Appointment" />
+            <Link to="/appointment">
+              <Button value="Get Appointment" />
+            </Link>
             <Button value="Learn More" dark />
           </motion.div>
         </div>
@@ -74,7 +77,9 @@ const Banner = () => {
             transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
             className="space-x-3"
           >
-            <Button value="Get Appointment" />
+            <Link to="/appointment">
+              <Button value="Get Appointment" />
+            </Link>
             <Button value="Learn More" dark />
           </motion.div>
         </div>
@@ -112,7 +117,9 @@ const Banner = () => {
             transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
             className="space-x-3"
           >
-            <Button value="Get Appointment" />
+            <Link to="/appointment">
+              <Button value="Get Appointment" />
+            </Link>
             <Button value="Learn More" dark />
           </motion.div>
         </div>
